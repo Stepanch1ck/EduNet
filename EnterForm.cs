@@ -32,6 +32,7 @@ namespace EduNet
                 MessageBox.Show("Подключение установленно");
             }
         }
+
     }
      
 }
