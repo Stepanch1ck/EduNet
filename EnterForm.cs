@@ -32,6 +32,16 @@ namespace EduNet
                 MessageBox.Show("Подключение установленно");
             }
         }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegistrationButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
      
 }
