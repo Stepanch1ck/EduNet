@@ -35,12 +35,12 @@ namespace EduNet
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-
+            LoginForm loginForm = new LoginForm();
         }
 
         private void RegistrationButton_Click(object sender, EventArgs e)
         {
-
+            RegistrationForm registrationForm = new RegistrationForm();
         }
     }
      
