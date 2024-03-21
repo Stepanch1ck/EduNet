@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace EduNet
 {
-    public partial class LoginForm : Form
+    public partial class StudentForm : Form
     {
-        public LoginForm()
+        public StudentForm()
         {
             InitializeComponent();
-        }
-        private void closeLogin1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

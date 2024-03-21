@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace EduNet
 {
-    public partial class LoginForm : Form
+    public partial class YouAreNotLogged : Form
     {
-        public LoginForm()
+        public YouAreNotLogged()
         {
             InitializeComponent();
         }
-        private void closeLogin1_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

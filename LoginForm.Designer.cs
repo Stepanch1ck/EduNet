@@ -73,9 +73,11 @@
             // 
             // login
             // 
+            this.login.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.login.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.login.Location = new System.Drawing.Point(95, 129);
+            this.login.ForeColor = System.Drawing.SystemColors.Control;
+            this.login.Location = new System.Drawing.Point(95, 128);
             this.login.Multiline = true;
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(222, 33);
@@ -84,14 +86,17 @@
             // 
             // password
             // 
+            this.password.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.password.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.password.ForeColor = System.Drawing.SystemColors.Control;
             this.password.Location = new System.Drawing.Point(95, 196);
             this.password.Multiline = true;
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(222, 33);
             this.password.TabIndex = 2;
             this.password.Text = "Пароль";
+            this.password.UseSystemPasswordChar = true;
             // 
             // closeLogin1
             // 
@@ -103,18 +108,22 @@
             this.closeLogin1.Size = new System.Drawing.Size(28, 32);
             this.closeLogin1.TabIndex = 3;
             this.closeLogin1.Text = "x";
+            this.closeLogin1.Click += new System.EventHandler(this.closeLogin1_Click);
             // 
             // enterButton
             // 
             this.enterButton.BackColor = System.Drawing.Color.Red;
             this.enterButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.enterButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.enterButton.FlatAppearance.BorderSize = 0;
             this.enterButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.enterButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.enterButton.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enterButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.enterButton.Location = new System.Drawing.Point(143, 274);
+            this.enterButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.enterButton.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enterButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.enterButton.Location = new System.Drawing.Point(81, 273);
             this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(117, 43);
+            this.enterButton.Size = new System.Drawing.Size(248, 49);
             this.enterButton.TabIndex = 3;
             this.enterButton.Text = "Войти";
             this.enterButton.UseVisualStyleBackColor = false;
@@ -123,11 +132,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(414, 372);
             this.Controls.Add(this.enterButton);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.panel1.ResumeLayout(false);

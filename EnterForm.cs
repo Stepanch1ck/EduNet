@@ -42,6 +42,10 @@ namespace EduNet
         {
             RegistrationForm registrationForm = new RegistrationForm();
         }
+        private void NameEnter_Click(object sender, EventArgs e)
+        {
+
+        }
     }
      
 }

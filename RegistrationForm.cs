@@ -17,9 +17,15 @@ namespace EduNet
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void closeRegistr_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void toRegister_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            StudentForm studentForm = new StudentForm();
         }
     }
 }
