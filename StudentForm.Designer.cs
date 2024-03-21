@@ -35,6 +35,7 @@
             this.exams = new System.Windows.Forms.Button();
             this.uspevaem = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.nameStudent = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.nameStudent);
             this.panel1.Controls.Add(this.studentButton);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -116,12 +118,23 @@
             this.panel3.Size = new System.Drawing.Size(561, 348);
             this.panel3.TabIndex = 3;
             // 
+            // nameStudent
+            // 
+            this.nameStudent.BackColor = System.Drawing.Color.Pink;
+            this.nameStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameStudent.Location = new System.Drawing.Point(123, 8);
+            this.nameStudent.Name = "nameStudent";
+            this.nameStudent.Size = new System.Drawing.Size(181, 32);
+            this.nameStudent.TabIndex = 4;
+            this.nameStudent.Text = "...";
+            this.nameStudent.UseVisualStyleBackColor = false;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(972, 571);
+            this.ClientSize = new System.Drawing.Size(972, 574);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -143,5 +156,6 @@
         private System.Windows.Forms.Button exams;
         private System.Windows.Forms.Label studentButton;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button nameStudent;
     }
 }

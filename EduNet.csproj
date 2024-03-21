@@ -67,7 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB.cs" />
     <Compile Include="EnterForm.cs">
       <SubType>Form</SubType>
     </Compile>
