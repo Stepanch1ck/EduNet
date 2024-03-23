@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.closeLogin1 = new System.Windows.Forms.Label();
             this.enter = new System.Windows.Forms.Label();
             this.closeLogin = new System.Windows.Forms.Label();
             this.login = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
-            this.closeLogin1 = new System.Windows.Forms.Label();
             this.enterButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +47,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // closeLogin1
+            // 
+            this.closeLogin1.AutoSize = true;
+            this.closeLogin1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeLogin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.closeLogin1.Location = new System.Drawing.Point(378, 0);
+            this.closeLogin1.Name = "closeLogin1";
+            this.closeLogin1.Size = new System.Drawing.Size(34, 39);
+            this.closeLogin1.TabIndex = 3;
+            this.closeLogin1.Text = "x";
+            this.closeLogin1.Click += new System.EventHandler(this.CloseLogin1_Click);
             // 
             // enter
             // 
@@ -98,18 +110,6 @@
             this.password.Text = "Пароль";
             this.password.UseSystemPasswordChar = true;
             // 
-            // closeLogin1
-            // 
-            this.closeLogin1.AutoSize = true;
-            this.closeLogin1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeLogin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.closeLogin1.Location = new System.Drawing.Point(387, 0);
-            this.closeLogin1.Name = "closeLogin1";
-            this.closeLogin1.Size = new System.Drawing.Size(28, 32);
-            this.closeLogin1.TabIndex = 3;
-            this.closeLogin1.Text = "x";
-            this.closeLogin1.Click += new System.EventHandler(this.closeLogin1_Click);
-            // 
             // enterButton
             // 
             this.enterButton.BackColor = System.Drawing.Color.Red;
@@ -127,6 +127,7 @@
             this.enterButton.TabIndex = 3;
             this.enterButton.Text = "Войти";
             this.enterButton.UseVisualStyleBackColor = false;
+            this.enterButton.Click += new System.EventHandler(this.EnterButton_Click);
             // 
             // LoginForm
             // 

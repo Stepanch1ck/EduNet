@@ -114,6 +114,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBClass.cs" />
     <Compile Include="EnterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,11 +141,11 @@
     <Compile Include="StudentForm.Designer.cs">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="YouAreNotLogged.cs">
+    <Compile Include="TeacherForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="YouAreNotLogged.Designer.cs">
-      <DependentUpon>YouAreNotLogged.cs</DependentUpon>
+    <Compile Include="TeacherForm.Designer.cs">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="EnterForm.resx">
       <DependentUpon>EnterForm.cs</DependentUpon>
@@ -168,8 +169,8 @@
     <EmbeddedResource Include="StudentForm.resx">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="YouAreNotLogged.resx">
-      <DependentUpon>YouAreNotLogged.cs</DependentUpon>
+    <EmbeddedResource Include="TeacherForm.resx">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

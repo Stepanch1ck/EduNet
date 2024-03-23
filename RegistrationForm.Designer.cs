@@ -35,10 +35,10 @@
             this.registration = new System.Windows.Forms.Label();
             this.repeatPassword = new System.Windows.Forms.TextBox();
             this.toRegister = new System.Windows.Forms.Button();
-            this.patronymic = new System.Windows.Forms.TextBox();
+            this.patronomyc = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
-            this.Surname = new System.Windows.Forms.TextBox();
-            this.institution = new System.Windows.Forms.ComboBox();
+            this.surname = new System.Windows.Forms.TextBox();
+            this.group = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,18 +132,18 @@
             this.toRegister.UseVisualStyleBackColor = false;
             this.toRegister.Click += new System.EventHandler(this.toRegister_Click);
             // 
-            // patronymic
+            // patronomyc
             // 
-            this.patronymic.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.patronymic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.patronymic.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patronymic.ForeColor = System.Drawing.SystemColors.Control;
-            this.patronymic.Location = new System.Drawing.Point(101, 230);
-            this.patronymic.Multiline = true;
-            this.patronymic.Name = "patronymic";
-            this.patronymic.Size = new System.Drawing.Size(245, 37);
-            this.patronymic.TabIndex = 6;
-            this.patronymic.Text = "Отчество";
+            this.patronomyc.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.patronomyc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.patronomyc.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patronomyc.ForeColor = System.Drawing.SystemColors.Control;
+            this.patronomyc.Location = new System.Drawing.Point(101, 230);
+            this.patronomyc.Multiline = true;
+            this.patronomyc.Name = "patronomyc";
+            this.patronomyc.Size = new System.Drawing.Size(245, 37);
+            this.patronomyc.TabIndex = 6;
+            this.patronomyc.Text = "Отчество";
             // 
             // name
             // 
@@ -158,36 +158,34 @@
             this.name.TabIndex = 6;
             this.name.Text = "Имя";
             // 
-            // Surname
+            // surname
             // 
-            this.Surname.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Surname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Surname.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Surname.ForeColor = System.Drawing.SystemColors.Control;
-            this.Surname.Location = new System.Drawing.Point(101, 106);
-            this.Surname.Multiline = true;
-            this.Surname.Name = "Surname";
-            this.Surname.Size = new System.Drawing.Size(245, 37);
-            this.Surname.TabIndex = 7;
-            this.Surname.Text = "Фамилия";
+            this.surname.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.surname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.surname.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.surname.ForeColor = System.Drawing.SystemColors.Control;
+            this.surname.Location = new System.Drawing.Point(101, 106);
+            this.surname.Multiline = true;
+            this.surname.Name = "surname";
+            this.surname.Size = new System.Drawing.Size(245, 37);
+            this.surname.TabIndex = 7;
+            this.surname.Text = "Фамилия";
             // 
-            // institution
+            // group
             // 
-            this.institution.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.institution.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.institution.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.institution.ForeColor = System.Drawing.SystemColors.Control;
-            this.institution.FormattingEnabled = true;
-            this.institution.Items.AddRange(new object[] {
-            "КФУ",
-            "КНИТУ-КАИ",
-            "КГЭУ",
-            "КГАУ"});
-            this.institution.Location = new System.Drawing.Point(101, 293);
-            this.institution.Name = "institution";
-            this.institution.Size = new System.Drawing.Size(245, 35);
-            this.institution.TabIndex = 8;
-            this.institution.Text = "Учреждение";
+            this.group.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.group.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.group.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group.ForeColor = System.Drawing.SystemColors.Control;
+            this.group.FormattingEnabled = true;
+            this.group.Items.AddRange(new object[] {
+            "321",
+            "322"});
+            this.group.Location = new System.Drawing.Point(101, 293);
+            this.group.Name = "group";
+            this.group.Size = new System.Drawing.Size(245, 35);
+            this.group.TabIndex = 8;
+            this.group.Text = "Группа";
             // 
             // RegistrationForm
             // 
@@ -195,10 +193,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(448, 677);
-            this.Controls.Add(this.institution);
-            this.Controls.Add(this.Surname);
+            this.Controls.Add(this.group);
+            this.Controls.Add(this.surname);
             this.Controls.Add(this.name);
-            this.Controls.Add(this.patronymic);
+            this.Controls.Add(this.patronomyc);
             this.Controls.Add(this.toRegister);
             this.Controls.Add(this.repeatPassword);
             this.Controls.Add(this.panel1);
@@ -222,9 +220,9 @@
         private System.Windows.Forms.TextBox repeatPassword;
         private System.Windows.Forms.Button toRegister;
         private System.Windows.Forms.Label closeRegistr;
-        private System.Windows.Forms.TextBox patronymic;
+        private System.Windows.Forms.TextBox patronomyc;
         private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TextBox Surname;
-        private System.Windows.Forms.ComboBox institution;
+        private System.Windows.Forms.TextBox surname;
+        private System.Windows.Forms.ComboBox group;
     }
 }
