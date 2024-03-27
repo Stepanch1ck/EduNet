@@ -11,7 +11,8 @@ namespace EduNet
 {
     internal class DBClass
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;user=root;password=root;database=student");
+        MySqlConnection connection = new MySqlConnection("host=localhost;port=3306;user=root;password=root;database=student");
+        MySqlConnection connectionSche = new MySqlConnection("host=localhost;port=3306;user=root;password=root;database=Schedule");
         public void OpenConnection()
         {
             if (connection.State == System.Data.ConnectionState.Closed)
@@ -29,6 +30,24 @@ namespace EduNet
         public MySqlConnection GetConnection()
         {
             return connection;
+        }
+        public void OpenScheConnection()
+        {
+            if (connectionSche.State == System.Data.ConnectionState.Closed)
+            {
+                connectionSche.Open();
+            }
+        }
+        public void CloseScheConnection()
+        {
+            if (connectionSche.State == System.Data.ConnectionState.Open)
+            {
+                connectionSche.Close();
+            }
+        }
+        public MySqlConnection GetScheConnection()
+        {
+            return connectionSche;
         }
     }
 }

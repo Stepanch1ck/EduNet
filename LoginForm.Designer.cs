@@ -55,7 +55,7 @@
             this.closeLogin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.closeLogin1.Location = new System.Drawing.Point(378, 0);
             this.closeLogin1.Name = "closeLogin1";
-            this.closeLogin1.Size = new System.Drawing.Size(34, 39);
+            this.closeLogin1.Size = new System.Drawing.Size(34, 38);
             this.closeLogin1.TabIndex = 3;
             this.closeLogin1.Text = "x";
             this.closeLogin1.Click += new System.EventHandler(this.CloseLogin1_Click);
@@ -95,6 +95,7 @@
             this.login.Size = new System.Drawing.Size(222, 33);
             this.login.TabIndex = 1;
             this.login.Text = "Логин";
+            this.login.MouseClick += new System.Windows.Forms.MouseEventHandler(this.login_MouseClick);
             // 
             // password
             // 
@@ -102,13 +103,14 @@
             this.password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.password.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.SystemColors.Control;
-            this.password.Location = new System.Drawing.Point(95, 196);
+            this.password.Location = new System.Drawing.Point(95, 197);
             this.password.Multiline = true;
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(222, 33);
             this.password.TabIndex = 2;
             this.password.Text = "Пароль";
             this.password.UseSystemPasswordChar = true;
+            this.password.MouseClick += new System.Windows.Forms.MouseEventHandler(this.password_MouseClick);
             // 
             // enterButton
             // 

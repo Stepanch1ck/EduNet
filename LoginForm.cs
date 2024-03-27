@@ -46,5 +46,16 @@ namespace EduNet
                 MessageBox.Show("Пользователя с таким логином не существует или вы ввели неверный пароль");
             }
         }
+
+
+        private void password_MouseClick(object sender, MouseEventArgs e)
+        {
+            password.Text = String.Empty;
+        }
+
+        private void login_MouseClick(object sender, MouseEventArgs e)
+        {
+            login.Text = String.Empty;
+        }
     }
 }

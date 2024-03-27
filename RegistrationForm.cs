@@ -25,65 +25,69 @@ namespace EduNet
 
         private void toRegister_Click(object sender, EventArgs e)
         {
-            if(surname.Text == "Фамилия")
+            if(surname.Text == "Фамилия" || surname.Text == null)
             {
                 MessageBox.Show("Введите фамилию");
                 return;
             }
-            if (name.Text == "Имя")
+            if (name.Text == "Имя" || name.Text == null)
             {
                 MessageBox.Show("Введите имя");
                 return;
             }
-            if (patronomyc.Text == "Отчество")
+            if (patronomyc.Text == "Отчество" || patronomyc.Text == null)
             {
                 MessageBox.Show("Введите отчество");
                 return;
             }
-            if (emailAddress.Text == "Эл. почта")
+            if (emailAddress.Text == "Эл. почта" || emailAddress.Text == null)
             {
                 MessageBox.Show("Введите электронную почту");
                 return;
             }
-            if (group.Text == "Группа")
+            if (group.Text == "Группа" || group.Text == null)
             {
                 MessageBox.Show("Введите группу");
                 return;
             }
-            if (comeUpWithPassword.Text == "Придумайте пароль")
+            if (comeUpWithPassword.Text == "Придумайте пароль" || comeUpWithPassword.Text == null)
             {
                 MessageBox.Show("Введите пароль");
                 return;
             }
-            if (repeatPassword.Text == "Повторите пароль")
+            if (repeatPassword.Text == "Повторите пароль" || repeatPassword.Text == null)
             {
                 MessageBox.Show("Повторите пароль");
                 return;
             }
             DBClass dbc = new DBClass();
-            MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO `student` (`Surname`, `Name`, `Patronomyc`, `ProfilePicture`, `Login`, `Password`, `Group`) VALUES (@surname, @name, @patronomyc, ST_GeomFromText(NULL), @login, @pass, @group)");
+            MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO `student` (`Surname`, `Name`, `Patronomyc`, `ProfilePicture`, `Login`, `Password`, `Group`) VALUES (@surname, @name, @patronomyc, NULL, @login, @pass, @group)", dbc.GetConnection());
             mySqlCommand.Parameters.Add("@surname", MySqlDbType.VarChar).Value = surname.Text;
             mySqlCommand.Parameters.Add("@name", MySqlDbType.VarChar).Value = name.Text;
             mySqlCommand.Parameters.Add("@patronomyc", MySqlDbType.VarChar).Value = patronomyc.Text;
             mySqlCommand.Parameters.Add("@login", MySqlDbType.VarChar).Value = emailAddress.Text;
-            mySqlCommand.Parameters.Add("@group", MySqlDbType.VarChar).Value = group.Text;
+            mySqlCommand.Parameters.Add("@group", MySqlDbType.Int16).Value = group.Text;
             if (comeUpWithPassword.Text.Equals(repeatPassword.Text))
             {
-                mySqlCommand.Parameters.Add("@password", MySqlDbType.VarChar).Value = repeatPassword.Text;
+                mySqlCommand.Parameters.Add("@pass", MySqlDbType.VarChar).Value = repeatPassword.Text;
+                dbc.OpenConnection();
+                if (mySqlCommand.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Вы успешно зарегистрировались");
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось зарегистрироваться");
+                }
+                dbc.CloseConnection();
+                this.Close();
+                StudentForm studentForm = new StudentForm();
+                studentForm.Show();
             }
             else
             {
-                MessageBox.Show("error");
-            }
-            dbc.OpenConnection();
-            //if(mySqlCommand.ExecuteNonQuery() == 1)
-            //{
-                MessageBox.Show("Вы успешно зарегистрировались");
- 
-            dbc.CloseConnection();
-            this.Close();
-            StudentForm studentForm = new StudentForm();
-            studentForm.Show();
+                MessageBox.Show("Пароль неверный");
+            } 
         }
         public Boolean checkUser()
         {
@@ -107,6 +111,41 @@ namespace EduNet
                 MessageBox.Show("Пользователя с таким логином не существует или вы ввели неверный пароль");
             }
             return true;
+        }
+
+        private void surname_Click(object sender, EventArgs e)
+        {
+            surname.Text = String.Empty;
+        }
+
+        private void name_Click(object sender, EventArgs e)
+        {
+            name.Text = String.Empty;
+        }
+
+        private void patronomyc_Click(object sender, EventArgs e)
+        {
+            patronomyc.Text = String.Empty;
+        }
+
+        private void emailAddress_Click(object sender, EventArgs e)
+        {
+            emailAddress.Text = String.Empty;
+        }
+
+        private void comeUpWithPassword_Click(object sender, EventArgs e)
+        {
+            comeUpWithPassword.Text = String.Empty;
+        }
+
+        private void group_Click(object sender, EventArgs e)
+        {
+            group.Text = String.Empty;
+        }
+
+        private void repeatPassword_Click(object sender, EventArgs e)
+        {
+            repeatPassword.Text = String.Empty;
         }
     }
 }

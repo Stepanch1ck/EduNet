@@ -35,9 +35,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.exams = new System.Windows.Forms.Button();
             this.performance = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.schedulePanel = new System.Windows.Forms.Panel();
+            this.mondayPanel = new System.Windows.Forms.Panel();
+            this.tableSchedule = new System.Windows.Forms.DataGridView();
+            this.friday = new System.Windows.Forms.Button();
+            this.thursday = new System.Windows.Forms.Button();
+            this.saturday = new System.Windows.Forms.Button();
+            this.wednesday = new System.Windows.Forms.Button();
+            this.tuesday = new System.Windows.Forms.Button();
+            this.monday = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.schedulePanel.SuspendLayout();
+            this.mondayPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).BeginInit();
             this.SuspendLayout();
             // 
             // scheduleStudent
@@ -53,6 +64,7 @@
             this.scheduleStudent.TabIndex = 0;
             this.scheduleStudent.Text = "Расписание";
             this.scheduleStudent.UseVisualStyleBackColor = false;
+            this.scheduleStudent.Click += new System.EventHandler(this.ScheduleStudent_Click);
             // 
             // panel1
             // 
@@ -129,13 +141,119 @@
             this.performance.Text = "Успеваемость";
             this.performance.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // schedulePanel
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel3.Location = new System.Drawing.Point(313, 141);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(561, 348);
-            this.panel3.TabIndex = 3;
+            this.schedulePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(34)))), ((int)(((byte)(48)))));
+            this.schedulePanel.Controls.Add(this.mondayPanel);
+            this.schedulePanel.Controls.Add(this.friday);
+            this.schedulePanel.Controls.Add(this.thursday);
+            this.schedulePanel.Controls.Add(this.saturday);
+            this.schedulePanel.Controls.Add(this.wednesday);
+            this.schedulePanel.Controls.Add(this.tuesday);
+            this.schedulePanel.Controls.Add(this.monday);
+            this.schedulePanel.Location = new System.Drawing.Point(263, 78);
+            this.schedulePanel.Name = "schedulePanel";
+            this.schedulePanel.Size = new System.Drawing.Size(654, 461);
+            this.schedulePanel.TabIndex = 3;
+            this.schedulePanel.Visible = false;
+            // 
+            // mondayPanel
+            // 
+            this.mondayPanel.Controls.Add(this.tableSchedule);
+            this.mondayPanel.Location = new System.Drawing.Point(20, 17);
+            this.mondayPanel.Name = "mondayPanel";
+            this.mondayPanel.Size = new System.Drawing.Size(424, 426);
+            this.mondayPanel.TabIndex = 10;
+            // 
+            // tableSchedule
+            // 
+            this.tableSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableSchedule.Location = new System.Drawing.Point(74, 112);
+            this.tableSchedule.Name = "tableSchedule";
+            this.tableSchedule.RowHeadersWidth = 51;
+            this.tableSchedule.RowTemplate.Height = 24;
+            this.tableSchedule.Size = new System.Drawing.Size(240, 150);
+            this.tableSchedule.TabIndex = 0;
+            this.tableSchedule.Visible = false;
+            // 
+            // friday
+            // 
+            this.friday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.friday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.friday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.friday.ForeColor = System.Drawing.SystemColors.Control;
+            this.friday.Location = new System.Drawing.Point(511, 229);
+            this.friday.Name = "friday";
+            this.friday.Size = new System.Drawing.Size(130, 35);
+            this.friday.TabIndex = 9;
+            this.friday.Text = "Пятница";
+            this.friday.UseVisualStyleBackColor = false;
+            // 
+            // thursday
+            // 
+            this.thursday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.thursday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.thursday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thursday.ForeColor = System.Drawing.SystemColors.Control;
+            this.thursday.Location = new System.Drawing.Point(511, 174);
+            this.thursday.Name = "thursday";
+            this.thursday.Size = new System.Drawing.Size(130, 35);
+            this.thursday.TabIndex = 8;
+            this.thursday.Text = "Четверг";
+            this.thursday.UseVisualStyleBackColor = false;
+            // 
+            // saturday
+            // 
+            this.saturday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.saturday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saturday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saturday.ForeColor = System.Drawing.SystemColors.Control;
+            this.saturday.Location = new System.Drawing.Point(511, 286);
+            this.saturday.Name = "saturday";
+            this.saturday.Size = new System.Drawing.Size(130, 35);
+            this.saturday.TabIndex = 7;
+            this.saturday.Text = "Суббота";
+            this.saturday.UseVisualStyleBackColor = false;
+            // 
+            // wednesday
+            // 
+            this.wednesday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.wednesday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.wednesday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wednesday.ForeColor = System.Drawing.SystemColors.Control;
+            this.wednesday.Location = new System.Drawing.Point(511, 120);
+            this.wednesday.Name = "wednesday";
+            this.wednesday.Size = new System.Drawing.Size(130, 35);
+            this.wednesday.TabIndex = 6;
+            this.wednesday.Text = "Среда";
+            this.wednesday.UseVisualStyleBackColor = false;
+            // 
+            // tuesday
+            // 
+            this.tuesday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tuesday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tuesday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tuesday.ForeColor = System.Drawing.SystemColors.Control;
+            this.tuesday.Location = new System.Drawing.Point(511, 68);
+            this.tuesday.Name = "tuesday";
+            this.tuesday.Size = new System.Drawing.Size(130, 35);
+            this.tuesday.TabIndex = 5;
+            this.tuesday.Text = "Вторник";
+            this.tuesday.UseVisualStyleBackColor = false;
+            // 
+            // monday
+            // 
+            this.monday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.monday.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.monday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monday.ForeColor = System.Drawing.SystemColors.Control;
+            this.monday.Location = new System.Drawing.Point(511, 17);
+            this.monday.Name = "monday";
+            this.monday.Size = new System.Drawing.Size(130, 35);
+            this.monday.TabIndex = 0;
+            this.monday.Text = "Понедельник";
+            this.monday.UseVisualStyleBackColor = false;
+            this.monday.Click += new System.EventHandler(this.monday_Click);
             // 
             // StudentForm
             // 
@@ -143,14 +261,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(972, 574);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.schedulePanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StudentForm";
             this.Text = "StudentForm";
+            this.Click += new System.EventHandler(this.ScheduleStudent_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.schedulePanel.ResumeLayout(false);
+            this.mondayPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,7 +285,15 @@
         private System.Windows.Forms.Button performance;
         private System.Windows.Forms.Button exams;
         private System.Windows.Forms.Label studentLabel;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button nameStudent;
+        private System.Windows.Forms.Panel schedulePanel;
+        private System.Windows.Forms.Button tuesday;
+        private System.Windows.Forms.Button monday;
+        private System.Windows.Forms.Button friday;
+        private System.Windows.Forms.Button thursday;
+        private System.Windows.Forms.Button saturday;
+        private System.Windows.Forms.Button wednesday;
+        private System.Windows.Forms.Panel mondayPanel;
+        private System.Windows.Forms.DataGridView tableSchedule;
     }
 }

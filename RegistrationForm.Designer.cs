@@ -54,6 +54,7 @@
             this.emailAddress.Size = new System.Drawing.Size(245, 37);
             this.emailAddress.TabIndex = 1;
             this.emailAddress.Text = "Эл. почта";
+            this.emailAddress.Click += new System.EventHandler(this.emailAddress_Click);
             // 
             // comeUpWithPassword
             // 
@@ -68,6 +69,7 @@
             this.comeUpWithPassword.TabIndex = 2;
             this.comeUpWithPassword.Text = "Придумайте пароль";
             this.comeUpWithPassword.UseSystemPasswordChar = true;
+            this.comeUpWithPassword.Click += new System.EventHandler(this.comeUpWithPassword_Click);
             // 
             // panel1
             // 
@@ -114,6 +116,7 @@
             this.repeatPassword.Size = new System.Drawing.Size(245, 37);
             this.repeatPassword.TabIndex = 4;
             this.repeatPassword.Text = "Повторите пароль";
+            this.repeatPassword.Click += new System.EventHandler(this.repeatPassword_Click);
             // 
             // toRegister
             // 
@@ -144,6 +147,7 @@
             this.patronomyc.Size = new System.Drawing.Size(245, 37);
             this.patronomyc.TabIndex = 6;
             this.patronomyc.Text = "Отчество";
+            this.patronomyc.Click += new System.EventHandler(this.patronomyc_Click);
             // 
             // name
             // 
@@ -157,6 +161,7 @@
             this.name.Size = new System.Drawing.Size(245, 37);
             this.name.TabIndex = 6;
             this.name.Text = "Имя";
+            this.name.Click += new System.EventHandler(this.name_Click);
             // 
             // surname
             // 
@@ -170,6 +175,7 @@
             this.surname.Size = new System.Drawing.Size(245, 37);
             this.surname.TabIndex = 7;
             this.surname.Text = "Фамилия";
+            this.surname.Click += new System.EventHandler(this.surname_Click);
             // 
             // group
             // 
@@ -186,6 +192,7 @@
             this.group.Size = new System.Drawing.Size(245, 35);
             this.group.TabIndex = 8;
             this.group.Text = "Группа";
+            this.group.Click += new System.EventHandler(this.group_Click);
             // 
             // RegistrationForm
             // 
