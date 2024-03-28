@@ -33,6 +33,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.edit = new System.Windows.Forms.Panel();
+            this.editProfile = new System.Windows.Forms.Label();
+            this.editEmail = new System.Windows.Forms.TextBox();
+            this.editPatronomyc = new System.Windows.Forms.TextBox();
+            this.editName = new System.Windows.Forms.TextBox();
+            this.editSurname = new System.Windows.Forms.TextBox();
+            this.edit.SuspendLayout();
             this.SuspendLayout();
             // 
             // Line
@@ -106,12 +113,85 @@
             this.panel1.Size = new System.Drawing.Size(40, 33);
             this.panel1.TabIndex = 6;
             // 
+            // edit
+            // 
+            this.edit.Controls.Add(this.editProfile);
+            this.edit.Controls.Add(this.editEmail);
+            this.edit.Controls.Add(this.editPatronomyc);
+            this.edit.Controls.Add(this.editName);
+            this.edit.Controls.Add(this.editSurname);
+            this.edit.Location = new System.Drawing.Point(157, 38);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(671, 440);
+            this.edit.TabIndex = 7;
+            this.edit.Visible = false;
+            // 
+            // editProfile
+            // 
+            this.editProfile.AutoSize = true;
+            this.editProfile.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editProfile.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editProfile.Location = new System.Drawing.Point(174, 13);
+            this.editProfile.Name = "editProfile";
+            this.editProfile.Size = new System.Drawing.Size(320, 28);
+            this.editProfile.TabIndex = 4;
+            this.editProfile.Text = "Редактировать профиль";
+            // 
+            // editEmail
+            // 
+            this.editEmail.BackColor = System.Drawing.Color.Red;
+            this.editEmail.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEmail.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editEmail.Location = new System.Drawing.Point(426, 281);
+            this.editEmail.Multiline = true;
+            this.editEmail.Name = "editEmail";
+            this.editEmail.Size = new System.Drawing.Size(204, 39);
+            this.editEmail.TabIndex = 3;
+            this.editEmail.Text = "Эл. почта";
+            // 
+            // editPatronomyc
+            // 
+            this.editPatronomyc.BackColor = System.Drawing.Color.Red;
+            this.editPatronomyc.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editPatronomyc.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editPatronomyc.Location = new System.Drawing.Point(426, 209);
+            this.editPatronomyc.Multiline = true;
+            this.editPatronomyc.Name = "editPatronomyc";
+            this.editPatronomyc.Size = new System.Drawing.Size(204, 39);
+            this.editPatronomyc.TabIndex = 2;
+            this.editPatronomyc.Text = "Отчество";
+            // 
+            // editName
+            // 
+            this.editName.BackColor = System.Drawing.Color.Red;
+            this.editName.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editName.Location = new System.Drawing.Point(426, 141);
+            this.editName.Multiline = true;
+            this.editName.Name = "editName";
+            this.editName.Size = new System.Drawing.Size(204, 39);
+            this.editName.TabIndex = 1;
+            this.editName.Text = "Имя";
+            // 
+            // editSurname
+            // 
+            this.editSurname.BackColor = System.Drawing.Color.Red;
+            this.editSurname.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editSurname.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editSurname.Location = new System.Drawing.Point(426, 75);
+            this.editSurname.Multiline = true;
+            this.editSurname.Name = "editSurname";
+            this.editSurname.Size = new System.Drawing.Size(204, 39);
+            this.editSurname.TabIndex = 0;
+            this.editSurname.Text = "Фамилия";
+            // 
             // EnterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(984, 517);
+            this.Controls.Add(this.edit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -125,6 +205,8 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "EnterForm";
             this.Load += new System.EventHandler(this.EnterForm_Load);
+            this.edit.ResumeLayout(false);
+            this.edit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -136,6 +218,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel edit;
+        private System.Windows.Forms.Label editProfile;
+        private System.Windows.Forms.TextBox editEmail;
+        private System.Windows.Forms.TextBox editPatronomyc;
+        private System.Windows.Forms.TextBox editName;
+        private System.Windows.Forms.TextBox editSurname;
     }
 }
 

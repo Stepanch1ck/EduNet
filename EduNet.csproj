@@ -187,6 +187,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\edu .sql" />
     <Content Include="EduDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
