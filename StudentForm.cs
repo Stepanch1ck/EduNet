@@ -14,14 +14,15 @@ namespace EduNet
 {
     public partial class StudentForm : Form
     {
+        private DataTable table = null;
         private void GetSQLrequest()
         {
             DBClass dbc = new DBClass();
-            dbc.OpenScheConnection();
-            string query = "SELECT * FROM schedule";
-            MySqlCommand command = new MySqlCommand(query, dbc.GetScheConnection());
-            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-            DataTable table = new DataTable();
+            dbc.OpenConnection();
+            string query = "SELECT * FROM lesson";
+            //MySqlCommand command = new MySqlCommand(query, dbc.GetScheConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, dbc.GetConnection());
+            table = new DataTable();
             adapter.Fill(table);
         }
         public StudentForm()
@@ -30,14 +31,17 @@ namespace EduNet
         }
         private void ScheduleStudent_Click(object sender, EventArgs e)
         {
+            edit.Visible = false;
             schedulePanel.Visible = true;
-        }
-        private void monday_Click(object sender, EventArgs e)
-        { 
             GetSQLrequest();
             tableSchedule.Visible = true;
-            DataTable dt = new DataTable();
-            tableSchedule.DataSource = dt;
+            tableSchedule.DataSource = table;
+        }
+
+        private void nameStudent_Click(object sender, EventArgs e)
+        {
+            schedulePanel.Visible = false;
+            edit.Visible = true;
         }
     }
 }

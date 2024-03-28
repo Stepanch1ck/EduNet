@@ -36,19 +36,21 @@
             this.exams = new System.Windows.Forms.Button();
             this.performance = new System.Windows.Forms.Button();
             this.schedulePanel = new System.Windows.Forms.Panel();
-            this.mondayPanel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.tableSchedule = new System.Windows.Forms.DataGridView();
-            this.friday = new System.Windows.Forms.Button();
-            this.thursday = new System.Windows.Forms.Button();
-            this.saturday = new System.Windows.Forms.Button();
-            this.wednesday = new System.Windows.Forms.Button();
-            this.tuesday = new System.Windows.Forms.Button();
-            this.monday = new System.Windows.Forms.Button();
+            this.mondayPanel = new System.Windows.Forms.Panel();
+            this.edit = new System.Windows.Forms.Panel();
+            this.editSurname = new System.Windows.Forms.TextBox();
+            this.editName = new System.Windows.Forms.TextBox();
+            this.editPatronomyc = new System.Windows.Forms.TextBox();
+            this.editEmail = new System.Windows.Forms.TextBox();
+            this.editProfile = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.schedulePanel.SuspendLayout();
-            this.mondayPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).BeginInit();
+            this.mondayPanel.SuspendLayout();
+            this.edit.SuspendLayout();
             this.SuspendLayout();
             // 
             // scheduleStudent
@@ -69,6 +71,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.nameStudent);
             this.panel1.Controls.Add(this.studentLabel);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -83,12 +86,13 @@
             this.nameStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleVioletRed;
             this.nameStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleVioletRed;
             this.nameStudent.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameStudent.Location = new System.Drawing.Point(123, 8);
+            this.nameStudent.Location = new System.Drawing.Point(67, 8);
             this.nameStudent.Name = "nameStudent";
             this.nameStudent.Size = new System.Drawing.Size(181, 32);
             this.nameStudent.TabIndex = 4;
             this.nameStudent.Text = "...";
             this.nameStudent.UseVisualStyleBackColor = false;
+            this.nameStudent.Click += new System.EventHandler(this.nameStudent_Click);
             // 
             // studentLabel
             // 
@@ -145,115 +149,112 @@
             // 
             this.schedulePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(34)))), ((int)(((byte)(48)))));
             this.schedulePanel.Controls.Add(this.mondayPanel);
-            this.schedulePanel.Controls.Add(this.friday);
-            this.schedulePanel.Controls.Add(this.thursday);
-            this.schedulePanel.Controls.Add(this.saturday);
-            this.schedulePanel.Controls.Add(this.wednesday);
-            this.schedulePanel.Controls.Add(this.tuesday);
-            this.schedulePanel.Controls.Add(this.monday);
-            this.schedulePanel.Location = new System.Drawing.Point(263, 78);
+            this.schedulePanel.Location = new System.Drawing.Point(228, 71);
             this.schedulePanel.Name = "schedulePanel";
-            this.schedulePanel.Size = new System.Drawing.Size(654, 461);
+            this.schedulePanel.Size = new System.Drawing.Size(717, 479);
             this.schedulePanel.TabIndex = 3;
             this.schedulePanel.Visible = false;
             // 
-            // mondayPanel
+            // panel3
             // 
-            this.mondayPanel.Controls.Add(this.tableSchedule);
-            this.mondayPanel.Location = new System.Drawing.Point(20, 17);
-            this.mondayPanel.Name = "mondayPanel";
-            this.mondayPanel.Size = new System.Drawing.Size(424, 426);
-            this.mondayPanel.TabIndex = 10;
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Location = new System.Drawing.Point(11, 7);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(40, 33);
+            this.panel3.TabIndex = 7;
             // 
             // tableSchedule
             // 
             this.tableSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableSchedule.Location = new System.Drawing.Point(74, 112);
+            this.tableSchedule.Location = new System.Drawing.Point(0, 0);
             this.tableSchedule.Name = "tableSchedule";
             this.tableSchedule.RowHeadersWidth = 51;
             this.tableSchedule.RowTemplate.Height = 24;
-            this.tableSchedule.Size = new System.Drawing.Size(240, 150);
+            this.tableSchedule.Size = new System.Drawing.Size(677, 446);
             this.tableSchedule.TabIndex = 0;
             this.tableSchedule.Visible = false;
             // 
-            // friday
+            // mondayPanel
             // 
-            this.friday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.friday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.friday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.friday.ForeColor = System.Drawing.SystemColors.Control;
-            this.friday.Location = new System.Drawing.Point(511, 229);
-            this.friday.Name = "friday";
-            this.friday.Size = new System.Drawing.Size(130, 35);
-            this.friday.TabIndex = 9;
-            this.friday.Text = "Пятница";
-            this.friday.UseVisualStyleBackColor = false;
+            this.mondayPanel.Controls.Add(this.edit);
+            this.mondayPanel.Controls.Add(this.tableSchedule);
+            this.mondayPanel.Location = new System.Drawing.Point(20, 17);
+            this.mondayPanel.Name = "mondayPanel";
+            this.mondayPanel.Size = new System.Drawing.Size(677, 446);
+            this.mondayPanel.TabIndex = 10;
             // 
-            // thursday
+            // edit
             // 
-            this.thursday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.thursday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.thursday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thursday.ForeColor = System.Drawing.SystemColors.Control;
-            this.thursday.Location = new System.Drawing.Point(511, 174);
-            this.thursday.Name = "thursday";
-            this.thursday.Size = new System.Drawing.Size(130, 35);
-            this.thursday.TabIndex = 8;
-            this.thursday.Text = "Четверг";
-            this.thursday.UseVisualStyleBackColor = false;
+            this.edit.Controls.Add(this.editProfile);
+            this.edit.Controls.Add(this.editEmail);
+            this.edit.Controls.Add(this.editPatronomyc);
+            this.edit.Controls.Add(this.editName);
+            this.edit.Controls.Add(this.editSurname);
+            this.edit.Location = new System.Drawing.Point(3, 3);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(671, 440);
+            this.edit.TabIndex = 1;
+            this.edit.Visible = false;
             // 
-            // saturday
+            // editSurname
             // 
-            this.saturday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.saturday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saturday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saturday.ForeColor = System.Drawing.SystemColors.Control;
-            this.saturday.Location = new System.Drawing.Point(511, 286);
-            this.saturday.Name = "saturday";
-            this.saturday.Size = new System.Drawing.Size(130, 35);
-            this.saturday.TabIndex = 7;
-            this.saturday.Text = "Суббота";
-            this.saturday.UseVisualStyleBackColor = false;
+            this.editSurname.BackColor = System.Drawing.Color.Red;
+            this.editSurname.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editSurname.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editSurname.Location = new System.Drawing.Point(426, 75);
+            this.editSurname.Multiline = true;
+            this.editSurname.Name = "editSurname";
+            this.editSurname.Size = new System.Drawing.Size(204, 39);
+            this.editSurname.TabIndex = 0;
+            this.editSurname.Text = "Фамилия";
             // 
-            // wednesday
+            // editName
             // 
-            this.wednesday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.wednesday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wednesday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wednesday.ForeColor = System.Drawing.SystemColors.Control;
-            this.wednesday.Location = new System.Drawing.Point(511, 120);
-            this.wednesday.Name = "wednesday";
-            this.wednesday.Size = new System.Drawing.Size(130, 35);
-            this.wednesday.TabIndex = 6;
-            this.wednesday.Text = "Среда";
-            this.wednesday.UseVisualStyleBackColor = false;
+            this.editName.BackColor = System.Drawing.Color.Red;
+            this.editName.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editName.Location = new System.Drawing.Point(426, 141);
+            this.editName.Multiline = true;
+            this.editName.Name = "editName";
+            this.editName.Size = new System.Drawing.Size(204, 39);
+            this.editName.TabIndex = 1;
+            this.editName.Text = "Имя";
             // 
-            // tuesday
+            // editPatronomyc
             // 
-            this.tuesday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tuesday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tuesday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tuesday.ForeColor = System.Drawing.SystemColors.Control;
-            this.tuesday.Location = new System.Drawing.Point(511, 68);
-            this.tuesday.Name = "tuesday";
-            this.tuesday.Size = new System.Drawing.Size(130, 35);
-            this.tuesday.TabIndex = 5;
-            this.tuesday.Text = "Вторник";
-            this.tuesday.UseVisualStyleBackColor = false;
+            this.editPatronomyc.BackColor = System.Drawing.Color.Red;
+            this.editPatronomyc.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editPatronomyc.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editPatronomyc.Location = new System.Drawing.Point(426, 209);
+            this.editPatronomyc.Multiline = true;
+            this.editPatronomyc.Name = "editPatronomyc";
+            this.editPatronomyc.Size = new System.Drawing.Size(204, 39);
+            this.editPatronomyc.TabIndex = 2;
+            this.editPatronomyc.Text = "Отчество";
             // 
-            // monday
+            // editEmail
             // 
-            this.monday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.monday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.monday.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monday.ForeColor = System.Drawing.SystemColors.Control;
-            this.monday.Location = new System.Drawing.Point(511, 17);
-            this.monday.Name = "monday";
-            this.monday.Size = new System.Drawing.Size(130, 35);
-            this.monday.TabIndex = 0;
-            this.monday.Text = "Понедельник";
-            this.monday.UseVisualStyleBackColor = false;
-            this.monday.Click += new System.EventHandler(this.monday_Click);
+            this.editEmail.BackColor = System.Drawing.Color.Red;
+            this.editEmail.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEmail.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editEmail.Location = new System.Drawing.Point(426, 281);
+            this.editEmail.Multiline = true;
+            this.editEmail.Name = "editEmail";
+            this.editEmail.Size = new System.Drawing.Size(204, 39);
+            this.editEmail.TabIndex = 3;
+            this.editEmail.Text = "Эл. почта";
+            // 
+            // editProfile
+            // 
+            this.editProfile.AutoSize = true;
+            this.editProfile.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editProfile.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editProfile.Location = new System.Drawing.Point(174, 13);
+            this.editProfile.Name = "editProfile";
+            this.editProfile.Size = new System.Drawing.Size(320, 28);
+            this.editProfile.TabIndex = 4;
+            this.editProfile.Text = "Редактировать профиль";
             // 
             // StudentForm
             // 
@@ -271,8 +272,10 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.schedulePanel.ResumeLayout(false);
-            this.mondayPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).EndInit();
+            this.mondayPanel.ResumeLayout(false);
+            this.edit.ResumeLayout(false);
+            this.edit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -287,13 +290,14 @@
         private System.Windows.Forms.Label studentLabel;
         private System.Windows.Forms.Button nameStudent;
         private System.Windows.Forms.Panel schedulePanel;
-        private System.Windows.Forms.Button tuesday;
-        private System.Windows.Forms.Button monday;
-        private System.Windows.Forms.Button friday;
-        private System.Windows.Forms.Button thursday;
-        private System.Windows.Forms.Button saturday;
-        private System.Windows.Forms.Button wednesday;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel mondayPanel;
         private System.Windows.Forms.DataGridView tableSchedule;
+        private System.Windows.Forms.Panel edit;
+        private System.Windows.Forms.TextBox editSurname;
+        private System.Windows.Forms.TextBox editEmail;
+        private System.Windows.Forms.TextBox editPatronomyc;
+        private System.Windows.Forms.TextBox editName;
+        private System.Windows.Forms.Label editProfile;
     }
 }

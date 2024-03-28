@@ -32,6 +32,7 @@
             this.nameEnter = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // Line
@@ -56,7 +57,7 @@
             this.nameEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleVioletRed;
             this.nameEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameEnter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.nameEnter.Location = new System.Drawing.Point(105, 8);
+            this.nameEnter.Location = new System.Drawing.Point(80, 7);
             this.nameEnter.Name = "nameEnter";
             this.nameEnter.Size = new System.Drawing.Size(75, 34);
             this.nameEnter.TabIndex = 3;
@@ -96,12 +97,22 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.LoginButton_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(12, 8);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(40, 33);
+            this.panel1.TabIndex = 6;
+            // 
             // EnterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(984, 517);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.nameEnter);
@@ -124,6 +135,7 @@
         private System.Windows.Forms.Button nameEnter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -11,7 +11,7 @@ namespace EduNet
 {
     internal class DBClass
     {
-        MySqlConnection connection = new MySqlConnection("host=localhost;port=3306;user=root;password=root;database=student");
+        MySqlConnection connection = new MySqlConnection("host=localhost;port=3306;user=root;password=root;database=edu");
         MySqlConnection connectionSche = new MySqlConnection("host=localhost;port=3306;user=root;password=root;database=Schedule");
         public void OpenConnection()
         {
