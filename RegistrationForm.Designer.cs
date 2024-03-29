@@ -220,16 +220,16 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox emailAddress;
+        internal System.Windows.Forms.TextBox emailAddress;
         private System.Windows.Forms.TextBox comeUpWithPassword;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label registration;
         private System.Windows.Forms.TextBox repeatPassword;
         private System.Windows.Forms.Button toRegister;
         private System.Windows.Forms.Label closeRegistr;
-        private System.Windows.Forms.TextBox patronomyc;
-        private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TextBox surname;
+        internal System.Windows.Forms.TextBox patronomyc;
+        internal System.Windows.Forms.TextBox name;
+        internal System.Windows.Forms.TextBox surname;
         private System.Windows.Forms.ComboBox group;
     }
 }

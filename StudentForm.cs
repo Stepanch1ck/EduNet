@@ -67,13 +67,45 @@ namespace EduNet
 
         private void saveChanges_Click(object sender, EventArgs e)
         {
+
             DBClass dbc = new DBClass();
-            MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO `student` (`Surname`, `Name`, `Patronomyc`, `ProfilePicture`, `Login`) VALUES (@surname, @name, @patronomyc, @profilePicture, @login)", dbc.GetConnection());
+            MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO `student` (`Surname`, `Name`, `Patronomyc`, `Login`, `Password`, `Group`) VALUES (@surname, @name, @patronomyc, @login, @password, @group)", dbc.GetConnection());
+            RegistrationForm form = new RegistrationForm();
+
             mySqlCommand.Parameters.Add("@surname", MySqlDbType.VarChar).Value = editSurname.Text;
             mySqlCommand.Parameters.Add("@name", MySqlDbType.VarChar).Value = editName.Text;
             mySqlCommand.Parameters.Add("@patronomyc", MySqlDbType.VarChar).Value = editPatronomyc.Text;
             mySqlCommand.Parameters.Add("@login", MySqlDbType.VarChar).Value = editEmail.Text;
-            mySqlCommand.Parameters.Add("@profilePicture", MySqlDbType.Polygon).Value = group.Text;
+            try
+            {
+                string value = editGroup.Rows[2].Cells[8].Value.ToString();
+                string value1 = editGroup.Rows[3].Cells[6].Value.ToString();
+                mySqlCommand.Parameters.Add("@password", MySqlDbType.VarChar).Value = 6575;
+                mySqlCommand.Parameters.Add("@group", MySqlDbType.Int16).Value = 321;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
+            dbc.OpenConnection();
+            if (mySqlCommand.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("Вы успешно изменили профиль");
+            }
+            else
+            {
+                MessageBox.Show("Не удалось изменить профиль");
+            }
+            dbc.CloseConnection();
+        }
+
+        private void performance_Click(object sender, EventArgs e)
+        {
+            edit.Visible = false;
+            schedulePanel.Visible = true;
+            GetSQLrequest();
+            tableSchedule.Visible = true;
+            tableSchedule.DataSource = table;
         }
     }
 }

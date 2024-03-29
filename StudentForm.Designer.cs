@@ -40,19 +40,20 @@
             this.mondayPanel = new System.Windows.Forms.Panel();
             this.tableSchedule = new System.Windows.Forms.DataGridView();
             this.edit = new System.Windows.Forms.Panel();
+            this.editGroup = new System.Windows.Forms.DataGridView();
+            this.saveChanges = new System.Windows.Forms.Button();
             this.editProfile = new System.Windows.Forms.Label();
             this.editEmail = new System.Windows.Forms.TextBox();
             this.editPatronomyc = new System.Windows.Forms.TextBox();
             this.editName = new System.Windows.Forms.TextBox();
             this.editSurname = new System.Windows.Forms.TextBox();
-            this.saveChanges = new System.Windows.Forms.Button();
-            this.editGroup = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.schedulePanel.SuspendLayout();
             this.mondayPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).BeginInit();
             this.edit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editGroup)).BeginInit();
             this.SuspendLayout();
             // 
             // scheduleStudent
@@ -155,6 +156,7 @@
             this.performance.TabIndex = 4;
             this.performance.Text = "Успеваемость";
             this.performance.UseVisualStyleBackColor = false;
+            this.performance.Click += new System.EventHandler(this.performance_Click);
             // 
             // schedulePanel
             // 
@@ -194,11 +196,38 @@
             this.edit.Controls.Add(this.editPatronomyc);
             this.edit.Controls.Add(this.editName);
             this.edit.Controls.Add(this.editSurname);
+            this.edit.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.edit.Location = new System.Drawing.Point(228, 71);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(717, 479);
             this.edit.TabIndex = 2;
             this.edit.Visible = false;
+            // 
+            // editGroup
+            // 
+            this.editGroup.BackgroundColor = System.Drawing.Color.Red;
+            this.editGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.editGroup.Location = new System.Drawing.Point(62, 285);
+            this.editGroup.Name = "editGroup";
+            this.editGroup.RowHeadersWidth = 51;
+            this.editGroup.RowTemplate.Height = 24;
+            this.editGroup.Size = new System.Drawing.Size(113, 35);
+            this.editGroup.TabIndex = 7;
+            // 
+            // saveChanges
+            // 
+            this.saveChanges.BackColor = System.Drawing.Color.Red;
+            this.saveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveChanges.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveChanges.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.saveChanges.Location = new System.Drawing.Point(395, 394);
+            this.saveChanges.Name = "saveChanges";
+            this.saveChanges.Size = new System.Drawing.Size(235, 50);
+            this.saveChanges.TabIndex = 5;
+            this.saveChanges.Text = "Сохранить изменения";
+            this.saveChanges.UseVisualStyleBackColor = false;
+            this.saveChanges.Click += new System.EventHandler(this.saveChanges_Click);
             // 
             // editProfile
             // 
@@ -263,32 +292,6 @@
             this.editSurname.Text = "Фамилия";
             this.editSurname.Click += new System.EventHandler(this.editSurname_Click);
             // 
-            // saveChanges
-            // 
-            this.saveChanges.BackColor = System.Drawing.Color.Red;
-            this.saveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveChanges.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveChanges.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.saveChanges.Location = new System.Drawing.Point(395, 394);
-            this.saveChanges.Name = "saveChanges";
-            this.saveChanges.Size = new System.Drawing.Size(235, 50);
-            this.saveChanges.TabIndex = 5;
-            this.saveChanges.Text = "Сохранить изменения";
-            this.saveChanges.UseVisualStyleBackColor = false;
-            this.saveChanges.Click += new System.EventHandler(this.saveChanges_Click);
-            // 
-            // editGroup
-            // 
-            this.editGroup.AutoSize = true;
-            this.editGroup.BackColor = System.Drawing.Color.Red;
-            this.editGroup.Font = new System.Drawing.Font("Microsoft Yi Baiti", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editGroup.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.editGroup.Location = new System.Drawing.Point(72, 286);
-            this.editGroup.Name = "editGroup";
-            this.editGroup.Size = new System.Drawing.Size(110, 34);
-            this.editGroup.TabIndex = 6;
-            this.editGroup.Text = "Группа";
-            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -310,6 +313,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).EndInit();
             this.edit.ResumeLayout(false);
             this.edit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editGroup)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,6 +338,6 @@
         private System.Windows.Forms.TextBox editName;
         private System.Windows.Forms.TextBox editSurname;
         private System.Windows.Forms.Button saveChanges;
-        private System.Windows.Forms.Label editGroup;
+        private System.Windows.Forms.DataGridView editGroup;
     }
 }
