@@ -1,8 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -17,12 +19,13 @@ namespace EduNet
     public partial class StudentForm : Form
     {
         private DataTable table = null;
-        private void GetSQLrequest()
+        private MySqlDataAdapter adapter = null;
+        private void GetSQLrequestForLesson()
         {
             DBClass dbc = new DBClass();
             dbc.OpenConnection();
             string query = "SELECT * FROM lesson";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, dbc.GetConnection());
+            adapter = new MySqlDataAdapter(query, dbc.GetConnection());
             table = new DataTable();
             adapter.Fill(table);
         }
@@ -34,9 +37,15 @@ namespace EduNet
         {
             edit.Visible = false;
             schedulePanel.Visible = true;
-            GetSQLrequest();
+            DBClass dbc = new DBClass();
+            dbc.OpenConnection();
+            string query = "SELECT * FROM lesson";
+            adapter = new MySqlDataAdapter(query, dbc.GetConnection());
+            table = new DataTable();
+            adapter.Fill(table);
             tableSchedule.Visible = true;
             tableSchedule.DataSource = table;
+            dbc.CloseConnection();
         }
 
         private void nameStudent_Click(object sender, EventArgs e)
@@ -67,26 +76,13 @@ namespace EduNet
 
         private void saveChanges_Click(object sender, EventArgs e)
         {
-
             DBClass dbc = new DBClass();
-            MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO `student` (`Surname`, `Name`, `Patronomyc`, `Login`, `Password`, `Group`) VALUES (@surname, @name, @patronomyc, @login, @password, @group)", dbc.GetConnection());
-            RegistrationForm form = new RegistrationForm();
-
-            mySqlCommand.Parameters.Add("@surname", MySqlDbType.VarChar).Value = editSurname.Text;
-            mySqlCommand.Parameters.Add("@name", MySqlDbType.VarChar).Value = editName.Text;
-            mySqlCommand.Parameters.Add("@patronomyc", MySqlDbType.VarChar).Value = editPatronomyc.Text;
-            mySqlCommand.Parameters.Add("@login", MySqlDbType.VarChar).Value = editEmail.Text;
-            try
-            {
-                string value = editGroup.Rows[2].Cells[8].Value.ToString();
-                string value1 = editGroup.Rows[3].Cells[6].Value.ToString();
-                mySqlCommand.Parameters.Add("@password", MySqlDbType.VarChar).Value = 6575;
-                mySqlCommand.Parameters.Add("@group", MySqlDbType.Int16).Value = 321;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-
-            }
+            MySqlCommand mySqlCommand = new MySqlCommand("SELECT FROM `student` (`Surname`, `Name`, `Patronomyc`, `Login`, `Passw, `Group`) VALUES (@surname, @name, @patronomyc, @login, @password, @group)", dbc.GetConnection());
+            DataTable dataTable = new DataTable("TableName");
+            bindingSource1.DataSource = dataTable;
+            dataGridView1.DataSource = bindingSource1;
+            bindingSource1.EndEdit();
+            adapter.Update(dataTable);
             dbc.OpenConnection();
             if (mySqlCommand.ExecuteNonQuery() == 1)
             {
@@ -103,9 +99,15 @@ namespace EduNet
         {
             edit.Visible = false;
             schedulePanel.Visible = true;
-            GetSQLrequest();
+            DBClass dbc = new DBClass();
+            dbc.OpenConnection();
+            string query = "SELECT * FROM performance";
+            adapter = new MySqlDataAdapter(query, dbc.GetConnection());
+            table = new DataTable();
+            adapter.Fill(table);
             tableSchedule.Visible = true;
             tableSchedule.DataSource = table;
+            dbc.CloseConnection();
         }
     }
 }

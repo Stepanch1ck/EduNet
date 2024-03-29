@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.scheduleStudent = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -47,6 +48,8 @@
             this.editPatronomyc = new System.Windows.Forms.TextBox();
             this.editName = new System.Windows.Forms.TextBox();
             this.editSurname = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.schedulePanel.SuspendLayout();
@@ -54,6 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).BeginInit();
             this.edit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // scheduleStudent
@@ -189,6 +194,7 @@
             // 
             // edit
             // 
+            this.edit.Controls.Add(this.dataGridView1);
             this.edit.Controls.Add(this.editGroup);
             this.edit.Controls.Add(this.saveChanges);
             this.edit.Controls.Add(this.editProfile);
@@ -292,6 +298,16 @@
             this.editSurname.Text = "Фамилия";
             this.editSurname.Click += new System.EventHandler(this.editSurname_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(199, 166);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 8;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -314,6 +330,8 @@
             this.edit.ResumeLayout(false);
             this.edit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +357,7 @@
         private System.Windows.Forms.TextBox editSurname;
         private System.Windows.Forms.Button saveChanges;
         private System.Windows.Forms.DataGridView editGroup;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
