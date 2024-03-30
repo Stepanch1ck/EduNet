@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.editTeacherProfile = new System.Windows.Forms.Button();
             this.AdminLabel = new System.Windows.Forms.Label();
             this.performanceJournal = new System.Windows.Forms.Button();
             this.scheduleTeacher = new System.Windows.Forms.Button();
@@ -43,7 +43,6 @@
             this.performanceeJournal = new System.Windows.Forms.DataGridView();
             this.editTeacher = new System.Windows.Forms.Panel();
             this.profilePictureTeacher = new System.Windows.Forms.PictureBox();
-            this.editGroup = new System.Windows.Forms.DataGridView();
             this.saveChanges = new System.Windows.Forms.Button();
             this.editProfile = new System.Windows.Forms.Label();
             this.editEmail = new System.Windows.Forms.TextBox();
@@ -61,13 +60,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.performanceeJournal)).BeginInit();
             this.editTeacher.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureTeacher)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editGroup)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.editTeacherProfile);
             this.panel1.Controls.Add(this.AdminLabel);
             this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -75,21 +73,22 @@
             this.panel1.Size = new System.Drawing.Size(965, 45);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // editTeacherProfile
             // 
-            this.button1.BackColor = System.Drawing.Color.Pink;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleVioletRed;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleVioletRed;
-            this.button1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(129, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 37);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = false;
+            this.editTeacherProfile.BackColor = System.Drawing.Color.Pink;
+            this.editTeacherProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editTeacherProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleVioletRed;
+            this.editTeacherProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleVioletRed;
+            this.editTeacherProfile.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editTeacherProfile.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.editTeacherProfile.Location = new System.Drawing.Point(129, 2);
+            this.editTeacherProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.editTeacherProfile.Name = "editTeacherProfile";
+            this.editTeacherProfile.Size = new System.Drawing.Size(179, 37);
+            this.editTeacherProfile.TabIndex = 6;
+            this.editTeacherProfile.Text = "...";
+            this.editTeacherProfile.UseVisualStyleBackColor = false;
+            this.editTeacherProfile.Click += new System.EventHandler(this.editTeacherProfile_Click);
             // 
             // AdminLabel
             // 
@@ -221,7 +220,6 @@
             // editTeacher
             // 
             this.editTeacher.Controls.Add(this.profilePictureTeacher);
-            this.editTeacher.Controls.Add(this.editGroup);
             this.editTeacher.Controls.Add(this.saveChanges);
             this.editTeacher.Controls.Add(this.editProfile);
             this.editTeacher.Controls.Add(this.editEmail);
@@ -244,29 +242,19 @@
             this.profilePictureTeacher.TabIndex = 8;
             this.profilePictureTeacher.TabStop = false;
             // 
-            // editGroup
-            // 
-            this.editGroup.BackgroundColor = System.Drawing.Color.Red;
-            this.editGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.editGroup.Location = new System.Drawing.Point(62, 285);
-            this.editGroup.Name = "editGroup";
-            this.editGroup.RowHeadersWidth = 51;
-            this.editGroup.RowTemplate.Height = 24;
-            this.editGroup.Size = new System.Drawing.Size(113, 35);
-            this.editGroup.TabIndex = 7;
-            // 
             // saveChanges
             // 
             this.saveChanges.BackColor = System.Drawing.Color.Red;
             this.saveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveChanges.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveChanges.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.saveChanges.Location = new System.Drawing.Point(395, 394);
+            this.saveChanges.Location = new System.Drawing.Point(211, 390);
             this.saveChanges.Name = "saveChanges";
             this.saveChanges.Size = new System.Drawing.Size(235, 50);
             this.saveChanges.TabIndex = 5;
             this.saveChanges.Text = "Сохранить изменения";
             this.saveChanges.UseVisualStyleBackColor = false;
+            this.saveChanges.Click += new System.EventHandler(this.saveChanges_Click);
             // 
             // editProfile
             // 
@@ -332,7 +320,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1303, 787);
+            this.ClientSize = new System.Drawing.Size(970, 578);
             this.Controls.Add(this.editTeacher);
             this.Controls.Add(this.performancePanel);
             this.Controls.Add(this.schedulePanel);
@@ -340,7 +328,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TeacherForm";
-            this.Text = "AdminForm";
+            this.Text = "Учитель";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -354,7 +342,6 @@
             this.editTeacher.ResumeLayout(false);
             this.editTeacher.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureTeacher)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editGroup)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,7 +353,7 @@
         private System.Windows.Forms.Button scheduleTeacher;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label AdminLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button editTeacherProfile;
         private System.Windows.Forms.Panel schedulePanel;
         private System.Windows.Forms.Panel mondayPanel;
         private System.Windows.Forms.DataGridView tableScheduleAdmin;
@@ -376,7 +363,6 @@
         private System.Windows.Forms.DataGridView dataStudentList;
         private System.Windows.Forms.Panel editTeacher;
         private System.Windows.Forms.PictureBox profilePictureTeacher;
-        private System.Windows.Forms.DataGridView editGroup;
         private System.Windows.Forms.Button saveChanges;
         private System.Windows.Forms.Label editProfile;
         private System.Windows.Forms.TextBox editEmail;

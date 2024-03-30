@@ -37,28 +37,32 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.exams = new System.Windows.Forms.Button();
             this.performance = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.schedulePanel = new System.Windows.Forms.Panel();
+            this.dataSchedule = new System.Windows.Forms.DataGridView();
+            this.performancePanel = new System.Windows.Forms.Panel();
+            this.dataPerformance = new System.Windows.Forms.DataGridView();
             this.editStudent = new System.Windows.Forms.Panel();
-            this.profilePicture = new System.Windows.Forms.PictureBox();
-            this.editGroup = new System.Windows.Forms.DataGridView();
+            this.profilePictureStudent = new System.Windows.Forms.PictureBox();
             this.saveChanges = new System.Windows.Forms.Button();
             this.editProfile = new System.Windows.Forms.Label();
             this.editEmail = new System.Windows.Forms.TextBox();
             this.editPatronomyc = new System.Windows.Forms.TextBox();
             this.editName = new System.Windows.Forms.TextBox();
             this.editSurname = new System.Windows.Forms.TextBox();
-            this.mondayPanel = new System.Windows.Forms.Panel();
-            this.tableSchedule = new System.Windows.Forms.DataGridView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.examPanel = new System.Windows.Forms.Panel();
+            this.dataExam = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.schedulePanel.SuspendLayout();
-            this.editStudent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editGroup)).BeginInit();
-            this.mondayPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.schedulePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSchedule)).BeginInit();
+            this.performancePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPerformance)).BeginInit();
+            this.editStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureStudent)).BeginInit();
+            this.examPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataExam)).BeginInit();
             this.SuspendLayout();
             // 
             // scheduleStudent
@@ -147,6 +151,7 @@
             this.exams.TabIndex = 3;
             this.exams.Text = "Экзамены";
             this.exams.UseVisualStyleBackColor = false;
+            this.exams.Click += new System.EventHandler(this.exams_Click);
             // 
             // performance
             // 
@@ -166,17 +171,49 @@
             // schedulePanel
             // 
             this.schedulePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(34)))), ((int)(((byte)(48)))));
-            this.schedulePanel.Controls.Add(this.mondayPanel);
-            this.schedulePanel.Location = new System.Drawing.Point(228, 71);
+            this.schedulePanel.Controls.Add(this.dataSchedule);
+            this.schedulePanel.Location = new System.Drawing.Point(234, 84);
             this.schedulePanel.Name = "schedulePanel";
-            this.schedulePanel.Size = new System.Drawing.Size(717, 479);
+            this.schedulePanel.Size = new System.Drawing.Size(719, 471);
             this.schedulePanel.TabIndex = 3;
             this.schedulePanel.Visible = false;
             // 
+            // dataSchedule
+            // 
+            this.dataSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSchedule.Location = new System.Drawing.Point(31, 36);
+            this.dataSchedule.Name = "dataSchedule";
+            this.dataSchedule.RowHeadersWidth = 51;
+            this.dataSchedule.RowTemplate.Height = 24;
+            this.dataSchedule.Size = new System.Drawing.Size(652, 395);
+            this.dataSchedule.TabIndex = 0;
+            this.dataSchedule.Visible = false;
+            // 
+            // performancePanel
+            // 
+            this.performancePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(34)))), ((int)(((byte)(48)))));
+            this.performancePanel.Controls.Add(this.examPanel);
+            this.performancePanel.Controls.Add(this.dataPerformance);
+            this.performancePanel.Location = new System.Drawing.Point(227, 84);
+            this.performancePanel.Name = "performancePanel";
+            this.performancePanel.Size = new System.Drawing.Size(726, 471);
+            this.performancePanel.TabIndex = 1;
+            this.performancePanel.Visible = false;
+            // 
+            // dataPerformance
+            // 
+            this.dataPerformance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataPerformance.Location = new System.Drawing.Point(38, 36);
+            this.dataPerformance.Name = "dataPerformance";
+            this.dataPerformance.RowHeadersWidth = 51;
+            this.dataPerformance.RowTemplate.Height = 24;
+            this.dataPerformance.Size = new System.Drawing.Size(652, 395);
+            this.dataPerformance.TabIndex = 0;
+            this.dataPerformance.Visible = false;
+            // 
             // editStudent
             // 
-            this.editStudent.Controls.Add(this.profilePicture);
-            this.editStudent.Controls.Add(this.editGroup);
+            this.editStudent.Controls.Add(this.profilePictureStudent);
             this.editStudent.Controls.Add(this.saveChanges);
             this.editStudent.Controls.Add(this.editProfile);
             this.editStudent.Controls.Add(this.editEmail);
@@ -185,30 +222,19 @@
             this.editStudent.Controls.Add(this.editSurname);
             this.editStudent.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editStudent.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.editStudent.Location = new System.Drawing.Point(228, 71);
+            this.editStudent.Location = new System.Drawing.Point(227, 67);
             this.editStudent.Name = "editStudent";
             this.editStudent.Size = new System.Drawing.Size(732, 491);
-            this.editStudent.TabIndex = 2;
+            this.editStudent.TabIndex = 9;
             this.editStudent.Visible = false;
             // 
-            // profilePicture
+            // profilePictureStudent
             // 
-            this.profilePicture.Location = new System.Drawing.Point(62, 75);
-            this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(183, 146);
-            this.profilePicture.TabIndex = 8;
-            this.profilePicture.TabStop = false;
-            // 
-            // editGroup
-            // 
-            this.editGroup.BackgroundColor = System.Drawing.Color.Red;
-            this.editGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.editGroup.Location = new System.Drawing.Point(62, 285);
-            this.editGroup.Name = "editGroup";
-            this.editGroup.RowHeadersWidth = 51;
-            this.editGroup.RowTemplate.Height = 24;
-            this.editGroup.Size = new System.Drawing.Size(113, 35);
-            this.editGroup.TabIndex = 7;
+            this.profilePictureStudent.Location = new System.Drawing.Point(62, 75);
+            this.profilePictureStudent.Name = "profilePictureStudent";
+            this.profilePictureStudent.Size = new System.Drawing.Size(183, 146);
+            this.profilePictureStudent.TabIndex = 8;
+            this.profilePictureStudent.TabStop = false;
             // 
             // saveChanges
             // 
@@ -216,13 +242,12 @@
             this.saveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveChanges.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveChanges.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.saveChanges.Location = new System.Drawing.Point(395, 394);
+            this.saveChanges.Location = new System.Drawing.Point(211, 376);
             this.saveChanges.Name = "saveChanges";
             this.saveChanges.Size = new System.Drawing.Size(235, 50);
             this.saveChanges.TabIndex = 5;
             this.saveChanges.Text = "Сохранить изменения";
             this.saveChanges.UseVisualStyleBackColor = false;
-            this.saveChanges.Click += new System.EventHandler(this.saveChanges_Click);
             // 
             // editProfile
             // 
@@ -246,7 +271,6 @@
             this.editEmail.Size = new System.Drawing.Size(204, 39);
             this.editEmail.TabIndex = 3;
             this.editEmail.Text = "Эл. почта";
-            this.editEmail.Click += new System.EventHandler(this.editEmail_Click);
             // 
             // editPatronomyc
             // 
@@ -259,7 +283,6 @@
             this.editPatronomyc.Size = new System.Drawing.Size(204, 39);
             this.editPatronomyc.TabIndex = 2;
             this.editPatronomyc.Text = "Отчество";
-            this.editPatronomyc.Click += new System.EventHandler(this.editPatronomyc_Click);
             // 
             // editName
             // 
@@ -272,7 +295,6 @@
             this.editName.Size = new System.Drawing.Size(204, 39);
             this.editName.TabIndex = 1;
             this.editName.Text = "Имя";
-            this.editName.Click += new System.EventHandler(this.editName_Click);
             // 
             // editSurname
             // 
@@ -285,51 +307,52 @@
             this.editSurname.Size = new System.Drawing.Size(204, 39);
             this.editSurname.TabIndex = 0;
             this.editSurname.Text = "Фамилия";
-            this.editSurname.Click += new System.EventHandler(this.editSurname_Click);
             // 
-            // mondayPanel
+            // examPanel
             // 
-            this.mondayPanel.Controls.Add(this.tableSchedule);
-            this.mondayPanel.Location = new System.Drawing.Point(20, 17);
-            this.mondayPanel.Name = "mondayPanel";
-            this.mondayPanel.Size = new System.Drawing.Size(677, 446);
-            this.mondayPanel.TabIndex = 10;
+            this.examPanel.Controls.Add(this.dataExam);
+            this.examPanel.Location = new System.Drawing.Point(0, 0);
+            this.examPanel.Name = "examPanel";
+            this.examPanel.Size = new System.Drawing.Size(726, 474);
+            this.examPanel.TabIndex = 1;
             // 
-            // tableSchedule
+            // dataExam
             // 
-            this.tableSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableSchedule.Location = new System.Drawing.Point(0, 0);
-            this.tableSchedule.Name = "tableSchedule";
-            this.tableSchedule.RowHeadersWidth = 51;
-            this.tableSchedule.RowTemplate.Height = 24;
-            this.tableSchedule.Size = new System.Drawing.Size(677, 446);
-            this.tableSchedule.TabIndex = 0;
-            this.tableSchedule.Visible = false;
+            this.dataExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataExam.Location = new System.Drawing.Point(38, 20);
+            this.dataExam.Name = "dataExam";
+            this.dataExam.RowHeadersWidth = 51;
+            this.dataExam.RowTemplate.Height = 24;
+            this.dataExam.Size = new System.Drawing.Size(652, 424);
+            this.dataExam.TabIndex = 0;
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(972, 574);
+            this.ClientSize = new System.Drawing.Size(1803, 682);
             this.Controls.Add(this.editStudent);
+            this.Controls.Add(this.performancePanel);
             this.Controls.Add(this.schedulePanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "StudentForm";
-            this.Text = "StudentForm";
+            this.Text = "Студент";
             this.Click += new System.EventHandler(this.ScheduleStudent_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.schedulePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSchedule)).EndInit();
+            this.performancePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataPerformance)).EndInit();
             this.editStudent.ResumeLayout(false);
             this.editStudent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editGroup)).EndInit();
-            this.mondayPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureStudent)).EndInit();
+            this.examPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataExam)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,19 +366,21 @@
         private System.Windows.Forms.Button exams;
         private System.Windows.Forms.Label studentLabel;
         private System.Windows.Forms.Button nameStudent;
-        private System.Windows.Forms.Panel schedulePanel;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel mondayPanel;
-        private System.Windows.Forms.DataGridView tableSchedule;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Panel schedulePanel;
+        private System.Windows.Forms.Panel performancePanel;
+        private System.Windows.Forms.DataGridView dataSchedule;
+        private System.Windows.Forms.DataGridView dataPerformance;
         private System.Windows.Forms.Panel editStudent;
+        private System.Windows.Forms.PictureBox profilePictureStudent;
+        private System.Windows.Forms.Button saveChanges;
         private System.Windows.Forms.Label editProfile;
         private System.Windows.Forms.TextBox editEmail;
         private System.Windows.Forms.TextBox editPatronomyc;
         private System.Windows.Forms.TextBox editName;
         private System.Windows.Forms.TextBox editSurname;
-        private System.Windows.Forms.Button saveChanges;
-        private System.Windows.Forms.DataGridView editGroup;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.PictureBox profilePicture;
+        private System.Windows.Forms.Panel examPanel;
+        private System.Windows.Forms.DataGridView dataExam;
     }
 }

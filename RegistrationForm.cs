@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EduNet
@@ -18,12 +12,12 @@ namespace EduNet
             InitializeComponent();
         }
 
-        private void closeRegistr_Click(object sender, EventArgs e)
+        void closeRegistr_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void toRegister_Click(object sender, EventArgs e)
+        void toRegister_Click(object sender, EventArgs e)
         {
             if(surname.Text == "Фамилия" || surname.Text == null)
             {
@@ -60,8 +54,8 @@ namespace EduNet
                 MessageBox.Show("Повторите пароль");
                 return;
             }
-            DBClass dbc = new DBClass();
-            MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO `student` (`Surname`, `Name`, `Patronomyc`, `ProfilePicture`, `Login`, `Password`, `Group`) VALUES (@surname, @name, @patronomyc, NULL, @login, @pass, @group)", dbc.GetConnection());
+            var dbc = new DBClass();
+            var mySqlCommand = new MySqlCommand("INSERT INTO `student` (`Surname`, `Name`, `Patronomyc`, `ProfilePicture`, `Login`, `Password`, `Group`) VALUES (@surname, @name, @patronomyc, NULL, @login, @pass, @group)", dbc.GetConnection());
             mySqlCommand.Parameters.Add("@surname", MySqlDbType.VarChar).Value = surname.Text;
             mySqlCommand.Parameters.Add("@name", MySqlDbType.VarChar).Value = name.Text;
             mySqlCommand.Parameters.Add("@patronomyc", MySqlDbType.VarChar).Value = patronomyc.Text;
@@ -81,7 +75,7 @@ namespace EduNet
                 }
                 dbc.CloseConnection();
                 this.Close();
-                StudentForm studentForm = new StudentForm();
+                var studentForm = new StudentForm();
                 studentForm.Show();
             }
             else
@@ -91,10 +85,10 @@ namespace EduNet
         }
         public Boolean checkUser()
         {
-            DBClass db = new DBClass();
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `student` WHERE `login` = @uL AND `password` = @uP", db.GetConnection());
+            var db = new DBClass();
+            var table = new DataTable();
+            var adapter = new MySqlDataAdapter();
+            var command = new MySqlCommand("SELECT * FROM `student` WHERE `login` = @uL AND `password` = @uP", db.GetConnection());
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = emailAddress.Text;
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = repeatPassword.Text;
             adapter.SelectCommand = command;
@@ -103,7 +97,7 @@ namespace EduNet
             {
                 MessageBox.Show("Пользователь авторизован");
                 this.Close();
-                StudentForm studentForm = new StudentForm();
+                var studentForm = new StudentForm();
                 studentForm.Show();
             }
             else
@@ -113,37 +107,37 @@ namespace EduNet
             return true;
         }
 
-        private void surname_Click(object sender, EventArgs e)
+        void surname_Click(object sender, EventArgs e)
         {
             surname.Text = String.Empty;
         }
 
-        private void name_Click(object sender, EventArgs e)
+        void name_Click(object sender, EventArgs e)
         {
             name.Text = String.Empty;
         }
 
-        private void patronomyc_Click(object sender, EventArgs e)
+        void patronomyc_Click(object sender, EventArgs e)
         {
             patronomyc.Text = String.Empty;
         }
 
-        private void emailAddress_Click(object sender, EventArgs e)
+        void emailAddress_Click(object sender, EventArgs e)
         {
             emailAddress.Text = String.Empty;
         }
 
-        private void comeUpWithPassword_Click(object sender, EventArgs e)
+        void comeUpWithPassword_Click(object sender, EventArgs e)
         {
             comeUpWithPassword.Text = String.Empty;
         }
 
-        private void group_Click(object sender, EventArgs e)
+        void group_Click(object sender, EventArgs e)
         {
             group.Text = String.Empty;
         }
 
-        private void repeatPassword_Click(object sender, EventArgs e)
+        void repeatPassword_Click(object sender, EventArgs e)
         {
             repeatPassword.Text = String.Empty;
         }
