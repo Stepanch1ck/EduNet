@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Мар 28 2024 г., 13:55
+-- Время создания: Мар 30 2024 г., 13:40
 -- Версия сервера: 5.7.24
 -- Версия PHP: 8.0.1
 
@@ -20,6 +20,45 @@ SET time_zone = "+00:00";
 --
 -- База данных: `edu`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `admin`
+--
+
+CREATE TABLE `admin` (
+  `ID` int(11) NOT NULL,
+  `Surname` varchar(50) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Patronomyc` varchar(50) NOT NULL,
+  `ProfilePicture` polygon DEFAULT NULL,
+  `Group` int(5) NOT NULL,
+  `Login` varchar(32) NOT NULL,
+  `Password` varchar(32) NOT NULL,
+  `Subject` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `admin`
+--
+
+INSERT INTO `admin` (`ID`, `Surname`, `Name`, `Patronomyc`, `ProfilePicture`, `Group`, `Login`, `Password`, `Subject`) VALUES
+(1, 'Бродовская', 'Людмила', 'Николаевна', NULL, 321, 'люда', '3645', 'История'),
+(2, 'Латыпова', 'Дина', 'Сергеевна', NULL, 321, 'дина', '6830', 'Разработка приложений на си шарп');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `exam`
+--
+
+CREATE TABLE `exam` (
+  `ID` int(11) NOT NULL,
+  `Subject` varchar(50) NOT NULL,
+  `Score1Sem` int(11) NOT NULL,
+  `Score2Sem` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -56,6 +95,31 @@ INSERT INTO `lesson` (`ID`, `WeekDay`, `NumberOfLesson`, `Time`, `EndTime`, `Sub
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `performance`
+--
+
+CREATE TABLE `performance` (
+  `ID` int(11) NOT NULL,
+  `Subject` varchar(50) NOT NULL,
+  `Score1Sem` int(11) DEFAULT NULL,
+  `Score2Sem` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `performance`
+--
+
+INSERT INTO `performance` (`ID`, `Subject`, `Score1Sem`, `Score2Sem`) VALUES
+(1, 'Математический анализ', 37, 43),
+(2, 'Английский язык', 45, 45),
+(3, 'История', 28, 35),
+(4, 'Алгебра и геометрия', 24, 30),
+(5, 'Разработка приложений на c#', 28, 30),
+(6, 'Русский язык', 28, 42);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `schedule`
 --
 
@@ -74,7 +138,7 @@ CREATE TABLE `schedule` (
 CREATE TABLE `student` (
   `ID` int(11) NOT NULL,
   `Surname` varchar(50) NOT NULL,
-  `Name` varchar(50) NOT NULL,
+  `Name` text NOT NULL,
   `Patronomyc` varchar(50) NOT NULL,
   `ProfilePicture` polygon DEFAULT NULL,
   `Group` int(5) NOT NULL,
@@ -87,13 +151,31 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`ID`, `Surname`, `Name`, `Patronomyc`, `ProfilePicture`, `Group`, `Login`, `Password`) VALUES
-(1, 'Сащикова', 'Елизавета', 'Сергеевна', NULL, 321, 'админ', '1234'),
+(1, 'щшгро', '0', 'Сергеевна', NULL, 321, 'админ', '1234'),
 (2, 'Чуркин', 'Степан', 'Сергеевич', NULL, 321, 'стёпа', '5678'),
 (3, 'Каримов', 'Адель', 'Ильдарович', NULL, 322, 'адель', '7890');
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Индексы таблицы `exam`
+--
+ALTER TABLE `exam`
+  ADD UNIQUE KEY `ID` (`ID`);
+
+--
+-- Индексы таблицы `performance`
+--
+ALTER TABLE `performance`
+  ADD UNIQUE KEY `ID` (`ID`);
 
 --
 -- Индексы таблицы `schedule`
@@ -112,10 +194,28 @@ ALTER TABLE `student`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `exam`
+--
+ALTER TABLE `exam`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `performance`
+--
+ALTER TABLE `performance`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT для таблицы `student`
 --
 ALTER TABLE `student`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
