@@ -195,6 +195,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>EduDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\msg1884241873-46667.jpg" />
+    <None Include="Resources\msg1884241873-466671.jpg" />
     <Content Include="student.sql" />
   </ItemGroup>
   <ItemGroup>
@@ -209,8 +211,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

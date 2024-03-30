@@ -190,21 +190,22 @@
             // performancePanel
             // 
             this.performancePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(34)))), ((int)(((byte)(48)))));
-            this.performancePanel.Controls.Add(this.examPanel);
             this.performancePanel.Controls.Add(this.dataPerformance);
-            this.performancePanel.Location = new System.Drawing.Point(227, 84);
+            this.performancePanel.Location = new System.Drawing.Point(237, 74);
             this.performancePanel.Name = "performancePanel";
-            this.performancePanel.Size = new System.Drawing.Size(726, 471);
+            this.performancePanel.Size = new System.Drawing.Size(726, 481);
             this.performancePanel.TabIndex = 1;
             this.performancePanel.Visible = false;
             // 
             // examPanel
             // 
+            this.examPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(34)))), ((int)(((byte)(48)))));
             this.examPanel.Controls.Add(this.dataExam);
-            this.examPanel.Location = new System.Drawing.Point(0, 0);
+            this.examPanel.Location = new System.Drawing.Point(234, 74);
             this.examPanel.Name = "examPanel";
-            this.examPanel.Size = new System.Drawing.Size(726, 474);
+            this.examPanel.Size = new System.Drawing.Size(729, 481);
             this.examPanel.TabIndex = 1;
+            this.examPanel.Visible = false;
             // 
             // dataExam
             // 
@@ -215,6 +216,7 @@
             this.dataExam.RowTemplate.Height = 24;
             this.dataExam.Size = new System.Drawing.Size(652, 424);
             this.dataExam.TabIndex = 0;
+            this.dataExam.Visible = false;
             // 
             // dataPerformance
             // 
@@ -237,7 +239,7 @@
             this.editStudent.Controls.Add(this.editSurname);
             this.editStudent.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editStudent.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.editStudent.Location = new System.Drawing.Point(227, 67);
+            this.editStudent.Location = new System.Drawing.Point(234, 74);
             this.editStudent.Name = "editStudent";
             this.editStudent.Size = new System.Drawing.Size(732, 491);
             this.editStudent.TabIndex = 9;
@@ -320,7 +322,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(975, 578);
+            this.ClientSize = new System.Drawing.Size(979, 586);
+            this.Controls.Add(this.examPanel);
             this.Controls.Add(this.editStudent);
             this.Controls.Add(this.performancePanel);
             this.Controls.Add(this.schedulePanel);

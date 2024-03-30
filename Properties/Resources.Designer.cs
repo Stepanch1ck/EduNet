@@ -59,5 +59,25 @@ namespace EduNet.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msg1884241873_46667 {
+            get {
+                object obj = ResourceManager.GetObject("msg1884241873-46667", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msg1884241873_466671 {
+            get {
+                object obj = ResourceManager.GetObject("msg1884241873-466671", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
