@@ -41,6 +41,7 @@
             this.mondayPanel = new System.Windows.Forms.Panel();
             this.tableSchedule = new System.Windows.Forms.DataGridView();
             this.edit = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.editGroup = new System.Windows.Forms.DataGridView();
             this.saveChanges = new System.Windows.Forms.Button();
             this.editProfile = new System.Windows.Forms.Label();
@@ -49,16 +50,15 @@
             this.editName = new System.Windows.Forms.TextBox();
             this.editSurname = new System.Windows.Forms.TextBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.schedulePanel.SuspendLayout();
             this.mondayPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).BeginInit();
             this.edit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // scheduleStudent
@@ -175,6 +175,7 @@
             // 
             // mondayPanel
             // 
+            this.mondayPanel.Controls.Add(this.edit);
             this.mondayPanel.Controls.Add(this.tableSchedule);
             this.mondayPanel.Location = new System.Drawing.Point(20, 17);
             this.mondayPanel.Name = "mondayPanel";
@@ -204,11 +205,21 @@
             this.edit.Controls.Add(this.editSurname);
             this.edit.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.edit.Location = new System.Drawing.Point(228, 71);
+            this.edit.Location = new System.Drawing.Point(124, 72);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(717, 479);
             this.edit.TabIndex = 2;
             this.edit.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(111, 75);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 8;
             // 
             // editGroup
             // 
@@ -298,23 +309,12 @@
             this.editSurname.Text = "Фамилия";
             this.editSurname.Click += new System.EventHandler(this.editSurname_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(199, 166);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 8;
-            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(972, 574);
-            this.Controls.Add(this.edit);
             this.Controls.Add(this.schedulePanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -329,9 +329,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).EndInit();
             this.edit.ResumeLayout(false);
             this.edit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

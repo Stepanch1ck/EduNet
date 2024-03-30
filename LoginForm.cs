@@ -36,10 +36,26 @@ namespace EduNet
             adapter.Fill(table);
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Пользователь авторизован");
+                MessageBox.Show("Студент авторизован");
                 this.Close();
                 StudentForm studentForm = new StudentForm();
                 studentForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Среди студентов нет такового пользователя");
+            }
+            command = new MySqlCommand("SELECT * FROM `admin` WHERE `login` = @uLT AND `password` = @uPT", db.GetConnection());
+            command.Parameters.Add("@uLT", MySqlDbType.VarChar).Value = loginUser;
+            command.Parameters.Add("@uPT", MySqlDbType.VarChar).Value = passUser;
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Администратор авторизован");
+                this.Close();
+                AdminForm adminForm = new AdminForm();
+                adminForm.Show();
             }
             else
             {

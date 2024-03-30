@@ -20,15 +20,6 @@ namespace EduNet
     {
         private DataTable table = null;
         private MySqlDataAdapter adapter = null;
-        private void GetSQLrequestForLesson()
-        {
-            DBClass dbc = new DBClass();
-            dbc.OpenConnection();
-            string query = "SELECT * FROM lesson";
-            adapter = new MySqlDataAdapter(query, dbc.GetConnection());
-            table = new DataTable();
-            adapter.Fill(table);
-        }
         public StudentForm()
         {
             InitializeComponent();
@@ -77,12 +68,18 @@ namespace EduNet
         private void saveChanges_Click(object sender, EventArgs e)
         {
             DBClass dbc = new DBClass();
-            MySqlCommand mySqlCommand = new MySqlCommand("SELECT FROM `student` (`Surname`, `Name`, `Patronomyc`, `Login`, `Passw, `Group`) VALUES (@surname, @name, @patronomyc, @login, @password, @group)", dbc.GetConnection());
-            DataTable dataTable = new DataTable("TableName");
-            bindingSource1.DataSource = dataTable;
-            dataGridView1.DataSource = bindingSource1;
-            bindingSource1.EndEdit();
-            adapter.Update(dataTable);
+            MySqlCommand mySqlCommand = new MySqlCommand("UPDATE student SET `surname` = @uS, `name` = @uN AND `patronomyc` = @uP AND `login` = @uL WHERE ID = @uI", dbc.GetConnection());
+            DataTable dataTable = new DataTable("student");
+            mySqlCommand.Parameters.Add("@uS", MySqlDbType.VarChar).Value = editSurname.Text;
+            mySqlCommand.Parameters.Add("@uN", MySqlDbType.Text).Value = editName.Text;
+            mySqlCommand.Parameters.Add("@uP", MySqlDbType.VarChar).Value = editPatronomyc.Text;
+            mySqlCommand.Parameters.Add("@uL", MySqlDbType.VarChar).Value = editEmail.Text;
+            mySqlCommand.Parameters.Add("@uI", MySqlDbType.Int16).Value = 1;
+            //bindingSource1.DataSource = dataTable;
+            //dataGridView1.DataSource = bindingSource1;
+            //bindingSource1.EndEdit();
+            //adapter = new MySqlDataAdapter(mySqlCommand);
+            //adapter.Update(dataTable);
             dbc.OpenConnection();
             if (mySqlCommand.ExecuteNonQuery() == 1)
             {
