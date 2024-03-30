@@ -21,11 +21,11 @@ namespace EduNet
             InitializeComponent();
         }
 
-        private void scheduleTeacher_Click(object sender, EventArgs e)
+        void scheduleTeacher_Click(object sender, EventArgs e)
         {
-            performanceeJournal.Visible = false;
+            performancePanel.Visible = false;
             schedulePanel.Visible = true;
-            DBClass dbc = new DBClass();
+            var dbc = new DBClass();
             dbc.OpenConnection();
             string query = "SELECT * FROM lesson";
             adapter = new MySqlDataAdapter(query, dbc.GetConnection());
@@ -36,11 +36,11 @@ namespace EduNet
             dbc.CloseConnection();
         }
 
-        private void performanceJournal_Click(object sender, EventArgs e)
+        void performanceJournal_Click(object sender, EventArgs e)
         {
             schedulePanel.Visible = false;
-            performanceeJournal.Visible = true;
-            DBClass dbc = new DBClass();
+            performancePanel.Visible = true;
+            var dbc = new DBClass();
             dbc.OpenConnection();
             string query = "SELECT * FROM performance";
             adapter = new MySqlDataAdapter(query, dbc.GetConnection());

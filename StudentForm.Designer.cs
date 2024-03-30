@@ -39,9 +39,7 @@
             this.performance = new System.Windows.Forms.Button();
             this.schedulePanel = new System.Windows.Forms.Panel();
             this.mondayPanel = new System.Windows.Forms.Panel();
-            this.tableSchedule = new System.Windows.Forms.DataGridView();
             this.edit = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.editGroup = new System.Windows.Forms.DataGridView();
             this.saveChanges = new System.Windows.Forms.Button();
             this.editProfile = new System.Windows.Forms.Label();
@@ -49,16 +47,18 @@
             this.editPatronomyc = new System.Windows.Forms.TextBox();
             this.editName = new System.Windows.Forms.TextBox();
             this.editSurname = new System.Windows.Forms.TextBox();
+            this.tableSchedule = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.schedulePanel.SuspendLayout();
             this.mondayPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).BeginInit();
             this.edit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // scheduleStudent
@@ -166,6 +166,7 @@
             // schedulePanel
             // 
             this.schedulePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(34)))), ((int)(((byte)(48)))));
+            this.schedulePanel.Controls.Add(this.edit);
             this.schedulePanel.Controls.Add(this.mondayPanel);
             this.schedulePanel.Location = new System.Drawing.Point(228, 71);
             this.schedulePanel.Name = "schedulePanel";
@@ -175,27 +176,15 @@
             // 
             // mondayPanel
             // 
-            this.mondayPanel.Controls.Add(this.edit);
             this.mondayPanel.Controls.Add(this.tableSchedule);
             this.mondayPanel.Location = new System.Drawing.Point(20, 17);
             this.mondayPanel.Name = "mondayPanel";
             this.mondayPanel.Size = new System.Drawing.Size(677, 446);
             this.mondayPanel.TabIndex = 10;
             // 
-            // tableSchedule
-            // 
-            this.tableSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableSchedule.Location = new System.Drawing.Point(0, 0);
-            this.tableSchedule.Name = "tableSchedule";
-            this.tableSchedule.RowHeadersWidth = 51;
-            this.tableSchedule.RowTemplate.Height = 24;
-            this.tableSchedule.Size = new System.Drawing.Size(677, 446);
-            this.tableSchedule.TabIndex = 0;
-            this.tableSchedule.Visible = false;
-            // 
             // edit
             // 
-            this.edit.Controls.Add(this.dataGridView1);
+            this.edit.Controls.Add(this.pictureBox1);
             this.edit.Controls.Add(this.editGroup);
             this.edit.Controls.Add(this.saveChanges);
             this.edit.Controls.Add(this.editProfile);
@@ -205,21 +194,11 @@
             this.edit.Controls.Add(this.editSurname);
             this.edit.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.edit.Location = new System.Drawing.Point(124, 72);
+            this.edit.Location = new System.Drawing.Point(0, 0);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(717, 479);
             this.edit.TabIndex = 2;
             this.edit.Visible = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(111, 75);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 8;
             // 
             // editGroup
             // 
@@ -309,6 +288,25 @@
             this.editSurname.Text = "Фамилия";
             this.editSurname.Click += new System.EventHandler(this.editSurname_Click);
             // 
+            // tableSchedule
+            // 
+            this.tableSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableSchedule.Location = new System.Drawing.Point(0, 0);
+            this.tableSchedule.Name = "tableSchedule";
+            this.tableSchedule.RowHeadersWidth = 51;
+            this.tableSchedule.RowTemplate.Height = 24;
+            this.tableSchedule.Size = new System.Drawing.Size(677, 446);
+            this.tableSchedule.TabIndex = 0;
+            this.tableSchedule.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(62, 75);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(183, 146);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,12 +324,12 @@
             this.panel2.ResumeLayout(false);
             this.schedulePanel.ResumeLayout(false);
             this.mondayPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).EndInit();
             this.edit.ResumeLayout(false);
             this.edit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,6 +356,6 @@
         private System.Windows.Forms.Button saveChanges;
         private System.Windows.Forms.DataGridView editGroup;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

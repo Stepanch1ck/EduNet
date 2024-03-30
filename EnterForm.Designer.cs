@@ -33,6 +33,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.editAdmin = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.editGroup = new System.Windows.Forms.DataGridView();
+            this.saveChanges = new System.Windows.Forms.Button();
+            this.editProfile = new System.Windows.Forms.Label();
+            this.editEmail = new System.Windows.Forms.TextBox();
+            this.editPatronomyc = new System.Windows.Forms.TextBox();
+            this.editName = new System.Windows.Forms.TextBox();
+            this.editSurname = new System.Windows.Forms.TextBox();
+            this.editAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editGroup)).BeginInit();
             this.SuspendLayout();
             // 
             // Line
@@ -106,12 +118,124 @@
             this.panel1.Size = new System.Drawing.Size(40, 33);
             this.panel1.TabIndex = 6;
             // 
+            // editAdmin
+            // 
+            this.editAdmin.Controls.Add(this.dataGridView1);
+            this.editAdmin.Controls.Add(this.editGroup);
+            this.editAdmin.Controls.Add(this.saveChanges);
+            this.editAdmin.Controls.Add(this.editProfile);
+            this.editAdmin.Controls.Add(this.editEmail);
+            this.editAdmin.Controls.Add(this.editPatronomyc);
+            this.editAdmin.Controls.Add(this.editName);
+            this.editAdmin.Controls.Add(this.editSurname);
+            this.editAdmin.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editAdmin.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editAdmin.Location = new System.Drawing.Point(134, 19);
+            this.editAdmin.Name = "editAdmin";
+            this.editAdmin.Size = new System.Drawing.Size(717, 479);
+            this.editAdmin.TabIndex = 7;
+            this.editAdmin.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(111, 75);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // editGroup
+            // 
+            this.editGroup.BackgroundColor = System.Drawing.Color.Red;
+            this.editGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.editGroup.Location = new System.Drawing.Point(62, 285);
+            this.editGroup.Name = "editGroup";
+            this.editGroup.RowHeadersWidth = 51;
+            this.editGroup.RowTemplate.Height = 24;
+            this.editGroup.Size = new System.Drawing.Size(113, 35);
+            this.editGroup.TabIndex = 7;
+            // 
+            // saveChanges
+            // 
+            this.saveChanges.BackColor = System.Drawing.Color.Red;
+            this.saveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveChanges.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveChanges.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.saveChanges.Location = new System.Drawing.Point(395, 394);
+            this.saveChanges.Name = "saveChanges";
+            this.saveChanges.Size = new System.Drawing.Size(235, 50);
+            this.saveChanges.TabIndex = 5;
+            this.saveChanges.Text = "Сохранить изменения";
+            this.saveChanges.UseVisualStyleBackColor = false;
+            // 
+            // editProfile
+            // 
+            this.editProfile.AutoSize = true;
+            this.editProfile.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editProfile.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editProfile.Location = new System.Drawing.Point(174, 13);
+            this.editProfile.Name = "editProfile";
+            this.editProfile.Size = new System.Drawing.Size(320, 28);
+            this.editProfile.TabIndex = 4;
+            this.editProfile.Text = "Редактировать профиль";
+            // 
+            // editEmail
+            // 
+            this.editEmail.BackColor = System.Drawing.Color.Red;
+            this.editEmail.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEmail.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editEmail.Location = new System.Drawing.Point(426, 281);
+            this.editEmail.Multiline = true;
+            this.editEmail.Name = "editEmail";
+            this.editEmail.Size = new System.Drawing.Size(204, 39);
+            this.editEmail.TabIndex = 3;
+            this.editEmail.Text = "Эл. почта";
+            // 
+            // editPatronomyc
+            // 
+            this.editPatronomyc.BackColor = System.Drawing.Color.Red;
+            this.editPatronomyc.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editPatronomyc.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editPatronomyc.Location = new System.Drawing.Point(426, 209);
+            this.editPatronomyc.Multiline = true;
+            this.editPatronomyc.Name = "editPatronomyc";
+            this.editPatronomyc.Size = new System.Drawing.Size(204, 39);
+            this.editPatronomyc.TabIndex = 2;
+            this.editPatronomyc.Text = "Отчество";
+            // 
+            // editName
+            // 
+            this.editName.BackColor = System.Drawing.Color.Red;
+            this.editName.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editName.Location = new System.Drawing.Point(426, 141);
+            this.editName.Multiline = true;
+            this.editName.Name = "editName";
+            this.editName.Size = new System.Drawing.Size(204, 39);
+            this.editName.TabIndex = 1;
+            this.editName.Text = "Имя";
+            // 
+            // editSurname
+            // 
+            this.editSurname.BackColor = System.Drawing.Color.Red;
+            this.editSurname.Font = new System.Drawing.Font("Microsoft Yi Baiti", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editSurname.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.editSurname.Location = new System.Drawing.Point(426, 75);
+            this.editSurname.Multiline = true;
+            this.editSurname.Name = "editSurname";
+            this.editSurname.Size = new System.Drawing.Size(204, 39);
+            this.editSurname.TabIndex = 0;
+            this.editSurname.Text = "Фамилия";
+            // 
             // EnterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(984, 517);
+            this.Controls.Add(this.editAdmin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -125,6 +249,10 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "EnterForm";
             this.Load += new System.EventHandler(this.EnterForm_Load);
+            this.editAdmin.ResumeLayout(false);
+            this.editAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editGroup)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,6 +264,15 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel editAdmin;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView editGroup;
+        private System.Windows.Forms.Button saveChanges;
+        private System.Windows.Forms.Label editProfile;
+        private System.Windows.Forms.TextBox editEmail;
+        private System.Windows.Forms.TextBox editPatronomyc;
+        private System.Windows.Forms.TextBox editName;
+        private System.Windows.Forms.TextBox editSurname;
     }
 }
 
