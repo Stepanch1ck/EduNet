@@ -26,7 +26,7 @@ namespace EduNet
         }
         private void ScheduleStudent_Click(object sender, EventArgs e)
         {
-            edit.Visible = false;
+            editStudent.Visible = false;
             schedulePanel.Visible = true;
             DBClass dbc = new DBClass();
             dbc.OpenConnection();
@@ -42,7 +42,7 @@ namespace EduNet
         private void nameStudent_Click(object sender, EventArgs e)
         {
             schedulePanel.Visible = false;
-            edit.Visible = true;
+            editStudent.Visible = true;
         }
 
         private void editSurname_Click(object sender, EventArgs e)
@@ -67,9 +67,9 @@ namespace EduNet
 
         private void saveChanges_Click(object sender, EventArgs e)
         {
-            DBClass dbc = new DBClass();
-            MySqlCommand mySqlCommand = new MySqlCommand("UPDATE student SET `surname` = @uS, `name` = @uN AND `patronomyc` = @uP AND `login` = @uL WHERE ID = @uI", dbc.GetConnection());
-            DataTable dataTable = new DataTable("student");
+            var dbc = new DBClass();
+            var mySqlCommand = new MySqlCommand("UPDATE student SET `surname` = @uS, `name` = @uN AND `patronomyc` = @uP AND `login` = @uL WHERE ID = @uI", dbc.GetConnection());
+            var dataTable = new DataTable("student");
             mySqlCommand.Parameters.Add("@uS", MySqlDbType.VarChar).Value = editSurname.Text;
             mySqlCommand.Parameters.Add("@uN", MySqlDbType.Text).Value = editName.Text;
             mySqlCommand.Parameters.Add("@uP", MySqlDbType.VarChar).Value = editPatronomyc.Text;
@@ -94,9 +94,9 @@ namespace EduNet
 
         private void performance_Click(object sender, EventArgs e)
         {
-            edit.Visible = false;
+            editStudent.Visible = false;
             schedulePanel.Visible = true;
-            DBClass dbc = new DBClass();
+            var dbc = new DBClass();
             dbc.OpenConnection();
             string query = "SELECT * FROM performance";
             adapter = new MySqlDataAdapter(query, dbc.GetConnection());

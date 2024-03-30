@@ -54,7 +54,7 @@ namespace EduNet
                 {
                     MessageBox.Show("Администратор авторизован");
                     this.Close();
-                    var adminForm = new AdminForm();
+                    var adminForm = new TeacherForm();
                     adminForm.Show();
                 }
                 else
