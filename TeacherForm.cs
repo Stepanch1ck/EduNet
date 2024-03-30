@@ -74,5 +74,24 @@ namespace EduNet
             }
             dbc.CloseConnection();
         }
+        void editSurname_Click(object sender, EventArgs e)
+        {
+            editSurname.Text = String.Empty;
+        }
+
+        void editName_Click(object sender, EventArgs e)
+        {
+            editName.Text = String.Empty;
+        }
+
+        void editPatronomyc_Click(object sender, EventArgs e)
+        {
+            editPatronomyc.Text = String.Empty;
+        }
+
+        void editEmail_Click(object sender, EventArgs e)
+        {
+            editEmail.Text = String.Empty;
+        }
     }
 }

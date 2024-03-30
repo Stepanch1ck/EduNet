@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.editTeacherProfile = new System.Windows.Forms.Button();
             this.AdminLabel = new System.Windows.Forms.Label();
@@ -42,13 +43,13 @@
             this.dataStudentList = new System.Windows.Forms.DataGridView();
             this.performanceeJournal = new System.Windows.Forms.DataGridView();
             this.editTeacher = new System.Windows.Forms.Panel();
-            this.profilePictureTeacher = new System.Windows.Forms.PictureBox();
             this.saveChanges = new System.Windows.Forms.Button();
             this.editProfile = new System.Windows.Forms.Label();
             this.editEmail = new System.Windows.Forms.TextBox();
             this.editPatronomyc = new System.Windows.Forms.TextBox();
             this.editName = new System.Windows.Forms.TextBox();
             this.editSurname = new System.Windows.Forms.TextBox();
+            this.profilePictureTeacher = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.schedulePanel.SuspendLayout();
@@ -234,14 +235,6 @@
             this.editTeacher.TabIndex = 8;
             this.editTeacher.Visible = false;
             // 
-            // profilePictureTeacher
-            // 
-            this.profilePictureTeacher.Location = new System.Drawing.Point(62, 75);
-            this.profilePictureTeacher.Name = "profilePictureTeacher";
-            this.profilePictureTeacher.Size = new System.Drawing.Size(183, 146);
-            this.profilePictureTeacher.TabIndex = 8;
-            this.profilePictureTeacher.TabStop = false;
-            // 
             // saveChanges
             // 
             this.saveChanges.BackColor = System.Drawing.Color.Red;
@@ -314,6 +307,16 @@
             this.editSurname.Size = new System.Drawing.Size(204, 39);
             this.editSurname.TabIndex = 0;
             this.editSurname.Text = "Фамилия";
+            // 
+            // profilePictureTeacher
+            // 
+            this.profilePictureTeacher.Image = ((System.Drawing.Image)(resources.GetObject("profilePictureTeacher.Image")));
+            this.profilePictureTeacher.Location = new System.Drawing.Point(52, 75);
+            this.profilePictureTeacher.Name = "profilePictureTeacher";
+            this.profilePictureTeacher.Size = new System.Drawing.Size(216, 212);
+            this.profilePictureTeacher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.profilePictureTeacher.TabIndex = 8;
+            this.profilePictureTeacher.TabStop = false;
             // 
             // TeacherForm
             // 

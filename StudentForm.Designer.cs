@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.scheduleStudent = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -37,32 +38,32 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.exams = new System.Windows.Forms.Button();
             this.performance = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.schedulePanel = new System.Windows.Forms.Panel();
             this.dataSchedule = new System.Windows.Forms.DataGridView();
             this.performancePanel = new System.Windows.Forms.Panel();
+            this.examPanel = new System.Windows.Forms.Panel();
+            this.dataExam = new System.Windows.Forms.DataGridView();
             this.dataPerformance = new System.Windows.Forms.DataGridView();
             this.editStudent = new System.Windows.Forms.Panel();
-            this.profilePictureStudent = new System.Windows.Forms.PictureBox();
             this.saveChanges = new System.Windows.Forms.Button();
             this.editProfile = new System.Windows.Forms.Label();
             this.editEmail = new System.Windows.Forms.TextBox();
             this.editPatronomyc = new System.Windows.Forms.TextBox();
             this.editName = new System.Windows.Forms.TextBox();
             this.editSurname = new System.Windows.Forms.TextBox();
-            this.examPanel = new System.Windows.Forms.Panel();
-            this.dataExam = new System.Windows.Forms.DataGridView();
+            this.profilePictureStudent = new System.Windows.Forms.PictureBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.schedulePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSchedule)).BeginInit();
             this.performancePanel.SuspendLayout();
+            this.examPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataExam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPerformance)).BeginInit();
             this.editStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureStudent)).BeginInit();
-            this.examPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataExam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // scheduleStudent
@@ -200,6 +201,24 @@
             this.performancePanel.TabIndex = 1;
             this.performancePanel.Visible = false;
             // 
+            // examPanel
+            // 
+            this.examPanel.Controls.Add(this.dataExam);
+            this.examPanel.Location = new System.Drawing.Point(0, 0);
+            this.examPanel.Name = "examPanel";
+            this.examPanel.Size = new System.Drawing.Size(726, 474);
+            this.examPanel.TabIndex = 1;
+            // 
+            // dataExam
+            // 
+            this.dataExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataExam.Location = new System.Drawing.Point(38, 20);
+            this.dataExam.Name = "dataExam";
+            this.dataExam.RowHeadersWidth = 51;
+            this.dataExam.RowTemplate.Height = 24;
+            this.dataExam.Size = new System.Drawing.Size(652, 424);
+            this.dataExam.TabIndex = 0;
+            // 
             // dataPerformance
             // 
             this.dataPerformance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -227,14 +246,6 @@
             this.editStudent.Size = new System.Drawing.Size(732, 491);
             this.editStudent.TabIndex = 9;
             this.editStudent.Visible = false;
-            // 
-            // profilePictureStudent
-            // 
-            this.profilePictureStudent.Location = new System.Drawing.Point(62, 75);
-            this.profilePictureStudent.Name = "profilePictureStudent";
-            this.profilePictureStudent.Size = new System.Drawing.Size(183, 146);
-            this.profilePictureStudent.TabIndex = 8;
-            this.profilePictureStudent.TabStop = false;
             // 
             // saveChanges
             // 
@@ -308,30 +319,22 @@
             this.editSurname.TabIndex = 0;
             this.editSurname.Text = "Фамилия";
             // 
-            // examPanel
+            // profilePictureStudent
             // 
-            this.examPanel.Controls.Add(this.dataExam);
-            this.examPanel.Location = new System.Drawing.Point(0, 0);
-            this.examPanel.Name = "examPanel";
-            this.examPanel.Size = new System.Drawing.Size(726, 474);
-            this.examPanel.TabIndex = 1;
-            // 
-            // dataExam
-            // 
-            this.dataExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataExam.Location = new System.Drawing.Point(38, 20);
-            this.dataExam.Name = "dataExam";
-            this.dataExam.RowHeadersWidth = 51;
-            this.dataExam.RowTemplate.Height = 24;
-            this.dataExam.Size = new System.Drawing.Size(652, 424);
-            this.dataExam.TabIndex = 0;
+            this.profilePictureStudent.Image = ((System.Drawing.Image)(resources.GetObject("profilePictureStudent.Image")));
+            this.profilePictureStudent.Location = new System.Drawing.Point(75, 75);
+            this.profilePictureStudent.Name = "profilePictureStudent";
+            this.profilePictureStudent.Size = new System.Drawing.Size(207, 204);
+            this.profilePictureStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePictureStudent.TabIndex = 8;
+            this.profilePictureStudent.TabStop = false;
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1803, 682);
+            this.ClientSize = new System.Drawing.Size(975, 578);
             this.Controls.Add(this.editStudent);
             this.Controls.Add(this.performancePanel);
             this.Controls.Add(this.schedulePanel);
@@ -343,16 +346,16 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.schedulePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSchedule)).EndInit();
             this.performancePanel.ResumeLayout(false);
+            this.examPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataExam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPerformance)).EndInit();
             this.editStudent.ResumeLayout(false);
             this.editStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureStudent)).EndInit();
-            this.examPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataExam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

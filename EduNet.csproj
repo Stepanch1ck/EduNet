@@ -195,6 +195,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>EduDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\msg1884241873-46664.jpg" />
+    <None Include="Resources\msg1884241873-466641.jpg" />
+    <None Include="Resources\photo1711822170.jpeg" />
     <Content Include="student.sql" />
     <None Include="Resources\naan_53166001.png" />
     <None Include="Resources\naan_5316600.png" />

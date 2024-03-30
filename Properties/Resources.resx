@@ -124,4 +124,13 @@
   <data name="naan_53166001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\naan_53166001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="msg1884241873-46664" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\msg1884241873-46664.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msg1884241873-466641" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\msg1884241873-466641.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="photo1711822170" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo1711822170.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
