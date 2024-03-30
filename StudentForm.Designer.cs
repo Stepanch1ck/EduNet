@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.scheduleStudent = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,7 +50,6 @@
             this.editPatronomyc = new System.Windows.Forms.TextBox();
             this.editName = new System.Windows.Forms.TextBox();
             this.editSurname = new System.Windows.Forms.TextBox();
-            this.profilePictureStudent = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,7 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataExam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPerformance)).BeginInit();
             this.editStudent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePictureStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -232,7 +229,6 @@
             // 
             // editStudent
             // 
-            this.editStudent.Controls.Add(this.profilePictureStudent);
             this.editStudent.Controls.Add(this.saveChanges);
             this.editStudent.Controls.Add(this.editProfile);
             this.editStudent.Controls.Add(this.editEmail);
@@ -319,16 +315,6 @@
             this.editSurname.TabIndex = 0;
             this.editSurname.Text = "Фамилия";
             // 
-            // profilePictureStudent
-            // 
-            this.profilePictureStudent.Image = ((System.Drawing.Image)(resources.GetObject("profilePictureStudent.Image")));
-            this.profilePictureStudent.Location = new System.Drawing.Point(75, 75);
-            this.profilePictureStudent.Name = "profilePictureStudent";
-            this.profilePictureStudent.Size = new System.Drawing.Size(207, 204);
-            this.profilePictureStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profilePictureStudent.TabIndex = 8;
-            this.profilePictureStudent.TabStop = false;
-            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -354,7 +340,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataPerformance)).EndInit();
             this.editStudent.ResumeLayout(false);
             this.editStudent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePictureStudent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -376,7 +361,6 @@
         private System.Windows.Forms.DataGridView dataSchedule;
         private System.Windows.Forms.DataGridView dataPerformance;
         private System.Windows.Forms.Panel editStudent;
-        private System.Windows.Forms.PictureBox profilePictureStudent;
         private System.Windows.Forms.Button saveChanges;
         private System.Windows.Forms.Label editProfile;
         private System.Windows.Forms.TextBox editEmail;
